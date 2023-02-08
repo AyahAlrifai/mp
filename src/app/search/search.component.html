@@ -1,10 +1,20 @@
-<mat-accordion>
+<mat-accordion style="margin: 50px;">
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                Search
+                <span class="panel-title">Search</span>
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <form [formGroup]="searchForm" (ngSubmit)="search()">
+            <mat-form-field *ngFor="let searchField of searchFields" class="medium" appearance="outline">
+                <mat-label>{{ searchField.name }}</mat-label>
+                <input type="{{ searchField.type }}" matInput formControlName="{{ searchField.formControlName }}" placeholder="{{ searchField.placeholder }}" [required]="searchField.required">
+            </mat-form-field>
+            <div class="buttons">
+                <button class="button" type="reset" mat-raised-button>Clear</button>
+                <button class="button" type="submit" mat-raised-button color="primary">Search</button>
+                <button class="button" type="button" mat-raised-button color="primary">Fetch From OOS</button>
+            </div>
+        </form>
     </mat-expansion-panel>
 </mat-accordion>

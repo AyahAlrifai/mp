@@ -1,0 +1,17 @@
+.spinner-panle {
+    position: fixed;
+    top: 0px;
+    left:0px;
+    background-color: #000000;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+}
+
+.spinner {
+    opacity: 1;
+    display: flex;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+}

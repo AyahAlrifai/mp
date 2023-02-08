@@ -5,3 +5,11 @@ body {
     font-size: small !important;
     margin: 0;
   }
+
+  .short {
+    width: 150px;
+  }
+
+  .medium {
+    width: 325px;
+  }

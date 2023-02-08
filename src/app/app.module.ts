@@ -10,6 +10,10 @@ import { MenuItemComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerService } from './spinner/spinner.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,18 +21,22 @@ import { SearchComponent } from './search/search.component';
     MenuItemComponent,
     HeaderComponent,
     CustomerComponent,
-    SearchComponent
+    SearchComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [AppService],
+  providers: [AppService,SpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,72 @@
+[
+    {
+        "name":"Account Number",
+        "required":false,
+        "formControlName":"accountNumber",
+        "type":"text",
+        "placeholder":"Account Number"
+    },
+    {
+        "name":"Company Name",
+        "required":false,
+        "formControlName":"companyName",
+        "type":"text",
+        "placeholder":"Company Name"
+    },
+    {
+        "name":"Contact Person",
+        "required":false,
+        "formControlName":"contactPerson",
+        "type":"text",
+        "placeholder":"Contact Person"
+    },
+    {
+        "name":"Parent Company",
+        "required":false,
+        "formControlName":"parentCompany",
+        "type":"text",
+        "placeholder":"Parent Company"
+    },
+    {
+        "name":"Phone Number",
+        "required":false,
+        "formControlName":"phoneNumber",
+        "type":"text",
+        "placeholder":"Phone Number"
+    },
+    {
+        "name":"Cycle Name",
+        "required":false,
+        "formControlName":"cycleName",
+        "type":"text",
+        "placeholder":"Cycle Name"
+    },
+    {
+        "name":"Price Book",
+        "required":false,
+        "formControlName":"priceBook",
+        "type":"text",
+        "placeholder":"Price Book"
+    },
+    {
+        "name":"Category Name",
+        "required":false,
+        "formControlName":"categoryName",
+        "type":"text",
+        "placeholder":"Category Name"
+    },
+    {
+        "name":"External Id",
+        "required":false,
+        "formControlName":"externalId",
+        "type":"text",
+        "placeholder":"External Id"
+    },
+    {
+        "name":"Email Address",
+        "required":false,
+        "formControlName":"emailAddress",
+        "type":"text",
+        "placeholder":"Email Address"
+    }
+]

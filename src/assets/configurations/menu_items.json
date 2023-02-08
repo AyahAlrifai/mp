@@ -1,107 +1,107 @@
 [
     {
         "displayName":"Home",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },
     {
         "displayName":"Catalog",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[
             {
                 "displayName":"Services",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Products",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Products",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Inherited Products",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Pricing",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Bundles",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Rating",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Groups",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Discounts",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Commission Setup",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Rating",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[
                     {
                         "displayName":"Advanced rating",
-                        "route":"/",
+                        "route":"",
                         "displayIcon":"",
                         "children":[]
                     },
                     {
                         "displayName":"Rating Summary",
-                        "route":"/",
+                        "route":"",
                         "displayIcon":"",
                         "children":[]
                     },
                     {
                         "displayName":"Basic Rating",
-                        "route":"/",
+                        "route":"",
                         "displayIcon":"",
                         "children":[]
                     },
                     {
                         "displayName":"Rate plans",
-                        "route":"/",
+                        "route":"",
                         "displayIcon":"",
                         "children":[]
                     },
                     {
                         "displayName":"Shared plans",
-                        "route":"/",
+                        "route":"",
                         "displayIcon":"",
                         "children":[]
                     }
@@ -109,37 +109,37 @@
             },
             {
                 "displayName":"Promotions",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Seasons",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Product Pricing",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Classification",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Bundles",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Switch Management",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             }
@@ -147,24 +147,24 @@
     },
     {
         "displayName":"Contracts",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[
             {
                 "displayName":"Contracts Templates",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Contract",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Contact",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             }
@@ -172,13 +172,13 @@
     },
     {
         "displayName":"Accounts",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },
     {
         "displayName":"Devices",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },
@@ -190,61 +190,61 @@
     },
     {
         "displayName":"Inventory",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },
     {
         "displayName":"Orders",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },
     {
         "displayName":"Revenue",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[
 
             {
                 "displayName":"Invoicing",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Payments",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Revenue Recognition",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Commission Report",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Import Center",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Revenue Dashboard",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Interactive Auto Payment",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             }
@@ -252,42 +252,42 @@
     },
     {
         "displayName":"Provisioning",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     }, 
     {
         "displayName":"Console",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },
     {
         "displayName":"Analytics",
-        "route":"/",
+        "route":"",
         "displayIcon":"",
         "children":[
             {
                 "displayName":"Dashboards",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Reports",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Reporting Center",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Financial Dashboard",
-                "route":"/",
+                "route":"",
                 "displayIcon":"",
                 "children":[]
             }

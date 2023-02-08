@@ -1,24 +1,24 @@
 [
     {
         "displayName": "",
-        "route": "/",
+        "route": "",
         "displayIcon": "../assets/img/icon-help.svg",
         "children": []
     },
     {
         "displayName": "",
-        "route": "/",
+        "route": "",
         "displayIcon": "../assets/img/icon-add-ticket.svg",
         "children": []
     },
     {
         "displayName": "",
-        "route": "/",
+        "route": "",
         "displayIcon": "../assets/img/icon-add-white.svg",
         "children": [
             {
                 "displayName": "Account details",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
@@ -30,13 +30,13 @@
             },
             {
                 "displayName": "Partner",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
             {
                 "displayName": "Service Configuration",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
@@ -48,25 +48,25 @@
             },
             {
                 "displayName": "Price Book",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
             {
                 "displayName": "Category",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
             {
                 "displayName": "Cycle",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
             {
                 "displayName": "GL Code",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             }
@@ -74,12 +74,12 @@
     },
     {
         "displayName": "",
-        "route": "/",
+        "route": "",
         "displayIcon": "../assets/img/icon-settings-white.svg",
         "children": [
             {
                 "displayName": "Account details",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             },
@@ -91,7 +91,7 @@
             },
             {
                 "displayName": "Partner",
-                "route": "/",
+                "route": "",
                 "displayIcon": "",
                 "children": []
             }
@@ -99,13 +99,13 @@
     },
     {
         "displayName": "",
-        "route": "/",
+        "route": "",
         "displayIcon": "../assets/img/icon-logout.svg",
         "children": []
     },
     {
         "displayName": "MP",
-        "route": "/",
+        "route": "",
         "displayIcon": "",
         "children": []
     }
