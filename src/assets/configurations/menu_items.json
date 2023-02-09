@@ -172,7 +172,7 @@
     },
     {
         "displayName":"Accounts",
-        "route":"",
+        "route":"/mp_u_v_customers",
         "displayIcon":"",
         "children":[]
     },
@@ -184,7 +184,7 @@
     },
     {
         "displayName":"Customers",
-        "route":"/customer",
+        "route":"",
         "displayIcon":"",
         "children":[]
     },

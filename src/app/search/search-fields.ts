@@ -5,4 +5,5 @@ export interface SearchFields {
     type: string;
     placeholder: string;
     operator: string;
+    list?: Array<any>;
 }

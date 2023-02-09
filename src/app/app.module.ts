@@ -15,6 +15,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner/spinner.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer/customer.service';
+import { GridActionComponent } from './grid/gridActions/gridAction.component';
+import { GridComponent } from './grid/grid.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { CustomerService } from './customer/customer.service';
     HeaderComponent,
     CustomerComponent,
     SearchComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    GridActionComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { CustomerService } from './customer/customer.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AgGridModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

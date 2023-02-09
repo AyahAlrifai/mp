@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@syncfusion/ej2-angular-dropdowns": "16.3.17",
+    "ag-grid-angular": "^29.0.0",
+    "ag-grid-community": "^29.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "typescript-require": "^0.3.0",

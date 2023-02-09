@@ -1,4 +1,5 @@
 <div>
     <header-view name="Customer"></header-view>
-    <search-view filePath="customer-search-fields"></search-view>
+    <search-view [searchFields]="searchFields" [searchForm]="searchForm" (onSearch)="search()"></search-view>
+    <grid [data]="data"></grid>
 </div>

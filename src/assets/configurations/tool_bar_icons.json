@@ -42,7 +42,7 @@
             },
             {
                 "displayName": "Customers",
-                "route": "/customer",
+                "route": "/mp_u_v_customers",
                 "displayIcon": "",
                 "children": []
             },
@@ -85,7 +85,7 @@
             },
             {
                 "displayName": "Customers",
-                "route": "/customer",
+                "route": "/mp_u_v_customers",
                 "displayIcon": "",
                 "children": []
             },
