@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner/spinner.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomerService } from './customer/customer.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [AppService,SpinnerService],
+  providers: [AppService,SpinnerService,CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

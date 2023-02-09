@@ -4,69 +4,111 @@
         "required":false,
         "formControlName":"accountNumber",
         "type":"text",
-        "placeholder":"Account Number"
+        "placeholder":"Account Number",
+        "operator": "ilkb"
     },
     {
         "name":"Company Name",
         "required":false,
         "formControlName":"companyName",
         "type":"text",
-        "placeholder":"Company Name"
+        "placeholder":"Company Name",
+        "operator": "ilkb"
     },
     {
         "name":"Contact Person",
         "required":false,
-        "formControlName":"contactPerson",
+        "formControlName":"contact",
         "type":"text",
-        "placeholder":"Contact Person"
+        "placeholder":"Contact Person",
+        "operator": "ilkb"
     },
     {
         "name":"Parent Company",
         "required":false,
         "formControlName":"parentCompany",
         "type":"text",
-        "placeholder":"Parent Company"
+        "placeholder":"Parent Company",
+        "operator": "ilkb"
     },
     {
         "name":"Phone Number",
         "required":false,
         "formControlName":"phoneNumber",
         "type":"text",
-        "placeholder":"Phone Number"
+        "placeholder":"Phone Number",
+        "operator": "ilkb"
     },
     {
         "name":"Cycle Name",
         "required":false,
-        "formControlName":"cycleName",
-        "type":"text",
-        "placeholder":"Cycle Name"
+        "formControlName":"cycleCode",
+        "type":"list",
+        "placeholder":"Cycle Name",
+        "operator": "in"
     },
     {
         "name":"Price Book",
         "required":false,
-        "formControlName":"priceBook",
-        "type":"text",
-        "placeholder":"Price Book"
+        "formControlName":"planCode",
+        "type":"list",
+        "placeholder":"Price Book",
+        "operator": "in"
     },
     {
         "name":"Category Name",
         "required":false,
-        "formControlName":"categoryName",
-        "type":"text",
-        "placeholder":"Category Name"
+        "formControlName":"categoryCode",
+        "type":"list",
+        "placeholder":"Category Name",
+        "operator": "in"
     },
     {
         "name":"External Id",
         "required":false,
-        "formControlName":"externalId",
+        "formControlName":"externalAccountId",
         "type":"text",
-        "placeholder":"External Id"
+        "placeholder":"External Id",
+        "operator": "ilkb"
     },
     {
-        "name":"Email Address",
+        "name":"Identifier",
         "required":false,
-        "formControlName":"emailAddress",
+        "formControlName":"psdFieldValue",
         "type":"text",
-        "placeholder":"Email Address"
+        "placeholder":"Identifier",
+        "operator": "ilkb"
+    },
+    {
+        "name":"Created Date",
+        "required":false,
+        "formControlName":"createdDate",
+        "type":"date",
+        "placeholder":"Created Date",
+        "operator": "btwn"
+    },
+    {
+        "name":"Account Status",
+        "required":false,
+        "formControlName":"accountStatus",
+        "type":"list",
+        "placeholder":"Account Status",
+        "operator": "in"
+    },
+    {
+        "name":"Check Number",
+        "required":false,
+        "formControlName":"achCheckNumber",
+        "type":"text",
+        "placeholder":"Check Number",
+        "operator": "ilkb"
+    },
+    {
+        "name":"Invoice Number",
+        "required":false,
+        "formControlName":"invoiceNumber",
+        "type":"text",
+        "placeholder":"Invoice Number",
+        "operator": "eq"
     }
 ]

@@ -8,7 +8,11 @@
         <form [formGroup]="searchForm" (ngSubmit)="search()">
             <mat-form-field *ngFor="let searchField of searchFields" class="medium" appearance="outline">
                 <mat-label>{{ searchField.name }}</mat-label>
-                <input type="{{ searchField.type }}" matInput formControlName="{{ searchField.formControlName }}" placeholder="{{ searchField.placeholder }}" [required]="searchField.required">
+                <input *ngIf="searchField.type == 'text'" type="{{ searchField.type }}" matInput formControlName="{{ searchField.formControlName }}"
+                    placeholder="{{ searchField.placeholder }}" [required]="searchField.required">
+                <mat-select *ngIf="searchField.type == 'list'" formControlName="{{ searchField.formControlName }}" multiple>
+                    <mat-option *ngFor="let category of categoryList" [value]="category">{{category}}</mat-option>
+                </mat-select>
             </mat-form-field>
             <div class="buttons">
                 <button class="button" type="reset" mat-raised-button>Clear</button>

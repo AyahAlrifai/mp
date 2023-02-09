@@ -4,4 +4,5 @@ export interface SearchFields {
     formControlName: string;
     type: string;
     placeholder: string;
+    operator: string;
 }
