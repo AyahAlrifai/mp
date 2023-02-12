@@ -1,5 +1,10 @@
 <grid-action></grid-action>
 <div class="example-wrapper">
+  <ag-grid-angular style="height: 600px;" class="ag-theme-alpine" [columnDefs]="columnDefs"
+    [autoGroupColumnDef]="autoGroupColumnDef" [defaultColDef]="defaultColDef" [suppressRowClickSelection]="true"
+    [groupSelectsChildren]="true" [rowSelection]="rowSelection" [rowGroupPanelShow]="rowGroupPanelShow"
+    [pivotPanelShow]="pivotPanelShow" [paginationPageSize]="rowsPerPage" [pagination]="true" [rowData]="data"
+    [animateRows]="true" (gridReady)="onGridReady($event)"></ag-grid-angular>
   <div class="example-header">
     Page Size:
     <select (change)="onPageSizeChanged()" id="page-size">
@@ -9,20 +14,3 @@
       <option value="1000">1000</option>
     </select>
   </div>
-<ag-grid-angular
-    style="height: 600px;"
-    class="ag-theme-alpine"
-    [columnDefs]="columnDefs"
-    [autoGroupColumnDef]="autoGroupColumnDef"
-    [defaultColDef]="defaultColDef"
-    [suppressRowClickSelection]="true"
-    [groupSelectsChildren]="true"
-    [rowSelection]="rowSelection"
-    [rowGroupPanelShow]="rowGroupPanelShow"
-    [pivotPanelShow]="pivotPanelShow"
-    [paginationPageSize]="rowsPerPage"
-    [pagination]="true"
-    [rowData]="data"
-    [animateRows]="true"
-    (gridReady)="onGridReady($event)"
-  ></ag-grid-angular>
