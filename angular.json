@@ -5,14 +5,10 @@
   "projects": {
     "mp": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "mp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -36,8 +32,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -102,5 +98,7 @@
       }
     }
   },
-  "defaultProject": "mp"
+  "cli": {
+    "analytics": "97ffd4ec-d106-4522-b72a-4cddb3e2ecaf"
+  }
 }
