@@ -140,9 +140,7 @@ export class CustomerComponent implements OnInit {
 
     this.spinnerService.showSpinner();
     this.customerService.search(body).subscribe(data => {
-      this.data = data.returnValue.data;
-      console.log(this.data);
-      
+      this.data = data.returnValue.data;      
       this.spinnerService.hideSpinner();
     }, err => {
       this.spinnerService.hideSpinner();

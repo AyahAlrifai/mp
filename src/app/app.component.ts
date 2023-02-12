@@ -10,7 +10,6 @@ import { MenuItem } from './menu/menu-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
   public navItems: Array<MenuItem> = [];
   public toolbarItems: Array<MenuItem> = [];
 

@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AgGridModule } from '@ag-grid-community/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -17,7 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer/customer.service';
 import { GridActionComponent } from './grid/gridActions/gridAction.component';
 import { GridComponent } from './grid/grid.component';
-import { AgGridModule } from 'ag-grid-angular';
+import { ModuleRegistry } from '@ag-grid-community/core';
+import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
+import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
+ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
 @NgModule({
   declarations: [
