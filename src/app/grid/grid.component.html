@@ -1,4 +1,14 @@
 <grid-action></grid-action>
+<div class="example-wrapper">
+  <div class="example-header">
+    Page Size:
+    <select (change)="onPageSizeChanged()" id="page-size">
+      <option value="10" selected="">10</option>
+      <option value="100">100</option>
+      <option value="500">500</option>
+      <option value="1000">1000</option>
+    </select>
+  </div>
 <ag-grid-angular
     style="height: 600px;"
     class="ag-theme-alpine"
@@ -10,7 +20,7 @@
     [rowSelection]="rowSelection"
     [rowGroupPanelShow]="rowGroupPanelShow"
     [pivotPanelShow]="pivotPanelShow"
-    [paginationAutoPageSize]="true"
+    [paginationPageSize]="rowsPerPage"
     [pagination]="true"
     [rowData]="data"
     [animateRows]="true"

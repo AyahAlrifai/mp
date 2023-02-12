@@ -2,10 +2,18 @@
 @import "@ag-grid-community/styles/ag-theme-alpine.css";
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 body { 
     font-family: Roboto, Arial, sans-serif;
-    font-size: small !important;
-    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
   }
 
   .short {

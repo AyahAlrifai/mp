@@ -1,3 +1,4 @@
+import { CheckboxSelectionCallbackParams, ColDef, HeaderCheckboxSelectionCallbackParams } from '@ag-grid-community/core';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -14,6 +15,8 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  public columnDefs: ColDef[] = [];
+  public rowsPerPage: number = 10;
   private categoryList: any = [];
   private cycleList: any = [];
   private pricebookList: any = [];
@@ -26,6 +29,7 @@ export class CustomerComponent implements OnInit {
   ];
   public searchForm: FormGroup = new FormGroup({});
   public data: any = [];
+  private configFilePath: string = "customer-grid-configuration";
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar, public customerService: CustomerService, public spinnerService: SpinnerService) {
 
@@ -33,6 +37,22 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.loadRequiredData();
+    this.loadGridConfig();
+  }
+
+  private loadGridConfig() {
+    this.http.get(`../../assets/configurations/${this.configFilePath}.json`)
+      .subscribe((data:any) => {
+        this.rowsPerPage = data.rowsPerPage;
+        this.columnDefs = data.colDefs as ColDef[];
+        this.columnDefs[0].checkboxSelection = checkboxSelection;
+        this.columnDefs[0].headerCheckboxSelection = headerCheckboxSelection;
+      }, err => {
+        this._snackBar.open(err.message, "failed", {
+          horizontalPosition: "start",
+          verticalPosition: "bottom",
+        });
+      });
   }
 
   private loadRequiredData() {
@@ -140,7 +160,7 @@ export class CustomerComponent implements OnInit {
 
     this.spinnerService.showSpinner();
     this.customerService.search(body).subscribe(data => {
-      this.data = data.returnValue.data;      
+      this.data = data.returnValue.data;
       this.spinnerService.hideSpinner();
     }, err => {
       this.spinnerService.hideSpinner();
@@ -153,14 +173,23 @@ export class CustomerComponent implements OnInit {
 
   private getFormattedDate(date: Date) {
     var year = date.getFullYear();
-  
+
     var month = (1 + date.getMonth()).toString();
     month = month.length > 1 ? month : '0' + month;
-  
+
     var day = date.getDate().toString();
     day = day.length > 1 ? day : '0' + day;
-    
+
     return month + '/' + day + '/' + year;
   }
 
 }
+
+
+const checkboxSelection = (params: CheckboxSelectionCallbackParams) => {
+  return params.columnApi.getRowGroupColumns().length === 0;
+};
+
+const headerCheckboxSelection = (params: HeaderCheckboxSelectionCallbackParams) => {
+  return params.columnApi.getRowGroupColumns().length === 0;
+};

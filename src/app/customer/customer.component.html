@@ -1,5 +1,5 @@
 <div>
     <header-view name="Customer"></header-view>
     <search-view [searchFields]="searchFields" [searchForm]="searchForm" (onSearch)="search()"></search-view>
-    <grid [data]="data"></grid>
+    <grid [data]="data" [columnDefs]="columnDefs" [rowsPerPage]="rowsPerPage"></grid>
 </div>
