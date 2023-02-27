@@ -4,9 +4,11 @@
 @import "../../scss/components/progressBar";
 @import "../../scss/components/table";
 @import "../../scss/base/utilities";
+
 .header {
   color: $primary_color_darkest;
-  font-weight: 500;
+  font-weight: 800;
+  padding-left: 1rem;
 }
 
 .task-panle {
