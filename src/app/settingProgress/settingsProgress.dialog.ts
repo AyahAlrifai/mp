@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
     selector: 'setting-progress',
     templateUrl: './settingsProgress.dialog.html',
     styleUrls: ['./settingsProgress.dialog.scss']
 })
-export class SettingsProgressDialog implements OnInit {
+export class SettingsProgressDialog {
 
-    constructor(fb: FormBuilder, public dialogRef: MatDialogRef<any>) {
+    constructor(public dialogRef: MatDialogRef<HeaderComponent>) {
 
-    }
-
-    ngOnInit(): void {
-        throw new Error('Method not implemented.');
     }
 
     closeDialog() {

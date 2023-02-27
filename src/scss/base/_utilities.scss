@@ -21,3 +21,15 @@
 .u-margin-top-huge {
     margin-top: 5rem;
 }
+
+.general-link-inline {
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    display: inline-block;
+}
+
+a, a:focus, a:hover {
+    color: $primary_color;
+    text-decoration: none;
+    cursor: pointer;
+}

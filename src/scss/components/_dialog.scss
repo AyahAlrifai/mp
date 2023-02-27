@@ -1,0 +1,36 @@
+@import "../abstract/variables";
+.dialog {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .dialog-header {
+        background-color: $primary_color_lightest;
+        margin: 0;
+        padding: 0.2rem;
+
+        .header-text {
+            color: $primary_color_darkest;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    }
+
+    .dialog-body {
+        background-color: $white-color;
+        padding: 1rem;
+    }
+
+    .dialog-buttons {
+        border-top: 1px solid rgba($black-color,0.4);
+        display: flex;
+        justify-content: flex-end;
+        height: 3rem;
+        padding: 0.5rem;
+    }
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+}
