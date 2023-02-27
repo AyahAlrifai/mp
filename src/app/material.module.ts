@@ -19,6 +19,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule }  from '@angular/material/progress-spinner';
+import { MatProgressBarModule }  from '@angular/material/progress-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatCheckboxModule } from '@angular/material/checkbox'
@@ -48,7 +49,7 @@ import { MatIconModule } from '@angular/material/icon';
         MatProgressSpinnerModule,
         MatSlideToggleModule,
         MatTreeModule,
-        MatCheckboxModule],
+        MatCheckboxModule,MatProgressBarModule],
 
     exports: [MatButtonModule,
         MatIconModule,
@@ -73,6 +74,6 @@ import { MatIconModule } from '@angular/material/icon';
         MatProgressSpinnerModule,
         MatSlideToggleModule,
         MatTreeModule,
-        MatCheckboxModule]
+        MatCheckboxModule,MatProgressBarModule]
 })
 export class MaterialModule { }

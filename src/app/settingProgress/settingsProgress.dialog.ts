@@ -9,6 +9,24 @@ import { HeaderComponent } from '../header/header.component';
 })
 export class SettingsProgressDialog {
 
+    public tasks = [
+        {
+            name:"Tax Engine",
+            status:"completed",
+            route:"#"
+        }, 
+        {
+            name:"Paymeny Gatway",
+            status:"not completed",
+            route:"#"
+        }, 
+        {
+            name:"StoreFront Settings",
+            status:"completed",
+            route:"#"
+        }, 
+    ]
+
     constructor(public dialogRef: MatDialogRef<HeaderComponent>) {
 
     }

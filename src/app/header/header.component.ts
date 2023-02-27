@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(SettingsProgressDialog, {
-      width: '60%',
+      height: '60%',
+      width: '60%'
     });
 
     dialogRef.afterClosed().subscribe(result => {

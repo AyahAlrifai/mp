@@ -3,9 +3,18 @@
         <span class="header-text"> Complete Settings</span>
     </div>
     <div class="dialog-body">
-        HELLO WORLD
+        <div class="header"> Please compleate your settings</div>
+        <mat-progress-bar color="primary" class="progress-bar" mode="determinate" value="75"></mat-progress-bar>
+        <table class="task-panle">
+            <tr class="task" *ngFor="let task of tasks">
+                <td>{{ task.name }}</td>
+                <td *ngIf="task.status == 'completed'" class="green-text center"><mat-icon>check_circle</mat-icon> {{ task.status }}</td>
+                <td *ngIf="task.status != 'completed'" class="red-text center"> <mat-icon>remove_circle</mat-icon> {{ task.status }}</td>
+                <td><a routerLink="{{ task.route }}"> <mat-icon>edit</mat-icon></a></td>
+            </tr>
+        </table>
     </div>
     <div class="dialog-buttons">
-        <button class="btn whiteBtn" type="button" (click)="closeDialog">Close</button>
+        <button class="btn whiteBtn" type="button" mat-raised-button (click)="closeDialog()">Close</button>
     </div>
 </div>

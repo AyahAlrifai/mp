@@ -1,3 +1,5 @@
+@import "../abstract/variables";
+
 .uCenterText {
     text-align: center;
 }
@@ -32,4 +34,12 @@ a, a:focus, a:hover {
     color: $primary_color;
     text-decoration: none;
     cursor: pointer;
+}
+
+.green-text {
+    color: $success_color;
+}
+
+.red-text {
+    color: $red;
 }

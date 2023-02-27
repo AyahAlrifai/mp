@@ -1,2 +1,26 @@
+@import "../../scss/abstract/variables";
 @import "../../scss/components/dialog";
-@import "../../scss/components/button";
+@import "../../scss/components/dialog";
+@import "../../scss/components/progressBar";
+@import "../../scss/components/table";
+@import "../../scss/base/utilities";
+.header {
+  color: $primary_color_darkest;
+  font-weight: 500;
+}
+
+.task-panle {
+  width: 90%;
+  margin: 5%;
+
+  .task {
+    td {
+      padding: 0.4rem;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}

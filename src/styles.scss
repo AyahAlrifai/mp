@@ -13,12 +13,6 @@
 @import "scss/layout/grid";
 @import "scss/components/button";
 @import "scss/components/from";
-
-
-  .short {
-    width: 150px;
-  }
-
-  .medium {
-    width: 325px;
-  }
+@import "scss/components/dialog";
+@import "scss/components/progressBar";
+@import "scss/components/table";
