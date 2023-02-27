@@ -7,7 +7,7 @@ import { SpinnerService } from './spinner.service';
 @Component({
   selector: 'spinner',
   templateUrl: 'spinner.component.html',
-  styleUrls: ['./spinner.component.css']
+  styleUrls: ['./spinner.component.scss']
 
 })
 export class SpinnerComponent {

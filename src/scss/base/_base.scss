@@ -1,0 +1,20 @@
+@import "../abstract/variables";
+
+body {
+    font-size: $font_size;
+    line-height: $line_height;
+    font-weight: $font_weight;
+    font-family:$font_family !important;
+    -ms-overflow-style: none;
+    scrollbar-width:none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}

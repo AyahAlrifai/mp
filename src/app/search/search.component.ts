@@ -1,16 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms'
+import { FormGroup } from '@angular/forms'
 import { SearchFields } from './search-fields';
 import { SpinnerService } from '../spinner/spinner.service';
 import { CustomerService } from '../customer/customer.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { SearchDataModle } from './search.data.model';
 
 @Component({
   selector: 'search-view',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
   @Input() searchFields: Array<SearchFields> = [];

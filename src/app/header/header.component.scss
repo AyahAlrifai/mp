@@ -1,0 +1,18 @@
+@import "../../scss/abstract/variables";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .view_name {
+        color: $gray_color_0;
+        font-weight: 1000;
+    }
+    
+    .settings {
+        color: $success_color;
+        display: flex;
+    }
+}
+

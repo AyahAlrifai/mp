@@ -5,8 +5,8 @@
                 <span class="panel-title">Search</span>
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <form [formGroup]="searchForm" (ngSubmit)="search()">
-            <mat-form-field *ngFor="let searchField of searchFields" class="medium" appearance="outline">
+        <form [formGroup]="searchForm" class="form" (ngSubmit)="search()">
+            <mat-form-field *ngFor="let searchField of searchFields" class="item medium" appearance="outline">
                 <mat-label>{{ searchField.name }}</mat-label>
                 <input *ngIf="searchField.type == 'text'" type="{{ searchField.type }}" matInput
                     formControlName="{{ searchField.formControlName }}" placeholder="{{ searchField.placeholder }}"
@@ -15,18 +15,18 @@
                     multiple>
                     <mat-option *ngFor="let item of searchField.list" [value]="item.key">{{item.value}}</mat-option>
                 </mat-select>
-                <div *ngIf="searchField.type == 'date'">
+                <span *ngIf="searchField.type == 'date'" style="display: flex;">
                     <mat-date-range-input [rangePicker]="campaignOnePicker">
                         <input matStartDate placeholder="Start date" formControlName="start">
                         <input matEndDate placeholder="End date" formControlName="end">
                     </mat-date-range-input>
                     <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
                     <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-                </div>
+                </span>
             </mat-form-field>
             <div class="buttons">
-                <button class="button" type="reset" mat-raised-button>Clear</button>
-                <button class="button" type="submit" mat-raised-button color="primary">Search</button>
+                <button class="btn whiteBtn" type="reset" mat-raised-button>Clear</button>
+                <button class="btn primaryBtn" type="submit" mat-raised-button color="primary">Search</button>
             </div>
         </form>
     </mat-expansion-panel>

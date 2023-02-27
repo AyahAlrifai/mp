@@ -1,0 +1,24 @@
+@mixin header-peimary-mixin($font-size, $letter-spacing, $animation-name) {
+    display: block;
+    font-weight: 700;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    animation-name: $animation-name;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

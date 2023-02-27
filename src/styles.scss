@@ -1,0 +1,24 @@
+@import "@ag-grid-community/styles/ag-grid.css";
+@import "@ag-grid-community/styles/ag-theme-alpine.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "scss/base/animations";
+@import "scss/base/base";
+@import "scss/base/typography";
+@import "scss/base/utilities";
+
+@import "scss/abstract/function";
+@import "scss/abstract/mixin";
+@import "scss/abstract/variables";
+
+@import "scss/layout/grid";
+@import "scss/components/button";
+@import "scss/components/from";
+
+
+  .short {
+    width: 150px;
+  }
+
+  .medium {
+    width: 325px;
+  }

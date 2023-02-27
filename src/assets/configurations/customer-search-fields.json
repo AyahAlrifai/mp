@@ -80,14 +80,6 @@
         "operator": "ilkb"
     },
     {
-        "name":"Created Date",
-        "required":false,
-        "formControlName":"createdDate",
-        "type":"date",
-        "placeholder":"Created Date",
-        "operator": "btwn"
-    },
-    {
         "name":"Account Status",
         "required":false,
         "formControlName":"accountStatus",
@@ -110,5 +102,13 @@
         "type":"text",
         "placeholder":"Invoice Number",
         "operator": "eq"
+    },
+    {
+        "name":"Created Date",
+        "required":false,
+        "formControlName":"createdDate",
+        "type":"date",
+        "placeholder":"Created Date",
+        "operator": "btwn"
     }
 ]

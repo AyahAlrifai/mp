@@ -6,14 +6,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css']
+  styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
   private gridApi!: GridApi<any>;
   @Input() public data: any = [];
   @Input() public columnDefs: ColDef[] = [];
   @Input() public rowsPerPage:number=10;
-  public rowSelection: 'single' | 'multiple' = 'single';
+  public rowSelection: 'single' | 'multiple' = 'multiple';
   public rowGroupPanelShow: 'always' | 'onlyWhenGrouping' | 'never' = 'always';
   public pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
   public autoGroupColumnDef: ColDef = {

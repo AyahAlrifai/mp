@@ -5,7 +5,7 @@ import { MenuItem } from './menu-item';
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.scss']
 })
 export class MenuItemComponent implements OnInit {
   @Input() items: MenuItem[] = [];

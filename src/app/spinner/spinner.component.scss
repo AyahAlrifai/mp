@@ -1,3 +1,5 @@
+@import "../../scss/abstract/variables";
+
 .spinner-panle {
     position: fixed;
     top: 0px;
@@ -14,4 +16,8 @@
     position: fixed;
     top: 45%;
     left: 45%;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $primary_color;
 }

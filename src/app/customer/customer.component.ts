@@ -12,7 +12,7 @@ import { CustomerService } from './customer.service';
 @Component({
   selector: 'customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
   public columnDefs: ColDef[] = [];
@@ -58,22 +58,22 @@ export class CustomerComponent implements OnInit {
   private loadRequiredData() {
     this.spinnerService.showSpinner();
     forkJoin(
-      this.customerService.getCycles(),
-      this.customerService.getPricebook(),
-      this.customerService.getCategories(),
+      // this.customerService.getCycles(),
+      // this.customerService.getPricebook(),
+      // this.customerService.getCategories(),
       this.http.get(`../../assets/configurations/${this.filePath}.json`)
-    ).subscribe(([cycles, plans, categories, searchFields]) => {
+    ).subscribe(([/*cycles, plans, categories, */searchFields]) => {
       this.spinnerService.hideSpinner();
 
-      plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
-        this.pricebookList.push({ key: element.planCode, value: element.planName });
-      });
-      cycles.returnValue.data.forEach((element: { cycleName: any; cycleCode: any; }) => {
-        this.cycleList.push({ value: element.cycleName, key: element.cycleCode });
-      });
-      categories.returnValue.data.forEach((element: { categoryName: any; categoryCode: any; }) => {
-        this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
-      });
+      // plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
+      //   this.pricebookList.push({ key: element.planCode, value: element.planName });
+      // });
+      // cycles.returnValue.data.forEach((element: { cycleName: any; cycleCode: any; }) => {
+      //   this.cycleList.push({ value: element.cycleName, key: element.cycleCode });
+      // });
+      // categories.returnValue.data.forEach((element: { categoryName: any; categoryCode: any; }) => {
+      //   this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
+      // });
 
       this.searchFields = searchFields;
       this.updateSearchFields();

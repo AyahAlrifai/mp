@@ -1,44 +1,44 @@
 <div class="toolbar" role="banner">
-  <div style="display: flex; align-items: center;">
+  <div class="left-toolbar">
     <img width="100" [src]="logo">
 
-    <span *ngFor="let item of navItems">
-      <!-- Handle branch node buttons here -->
+    <span class="menu-item" *ngFor="let item of navItems">
+
       <span *ngIf="item.children && item.children.length > 0">
-        <button mat-button class="menu_item" [matMenuTriggerFor]="menu.childMenu">
+        <span class="inner-menu-item" [matMenuTriggerFor]="menu.childMenu">
           <img *ngIf="item.displayIcon" [src]="item.displayIcon">
           <span>{{item.displayName}}</span>
           <mat-icon>expand_more</mat-icon>
-        </button>
+        </span>
         <app-menu-item #menu [items]="item.children"></app-menu-item>
       </span>
-      <!-- Leaf node buttons here -->
+
       <span *ngIf="!item.children || item.children.length === 0">
-        <button mat-button class="menu_item" [routerLink]="item.route">
+        <span class="inner-menu-item" [routerLink]="item.route">
           <img *ngIf="item.displayIcon" [src]="item.displayIcon">
           <span>{{item.displayName}}</span>
-        </button>
+        </span>
       </span>
     </span>
 
   </div>
-  <div>
-    <span *ngFor="let item of toolbarItems">
+  <div class="right-toolbar">
+    <span class="menu-item" *ngFor="let item of toolbarItems">
       <!-- Handle branch node buttons here -->
       <span *ngIf="item.children && item.children.length > 0">
-        <button class="menu_icon" mat-button [matMenuTriggerFor]="menu.childMenu">
+        <span class="inner-menu-item" [matMenuTriggerFor]="menu.childMenu">
           <img width="15" *ngIf="item.displayIcon" [src]="item.displayIcon">
           <span>{{item.displayName}}</span>
           <mat-icon>expand_more</mat-icon>
-        </button>
+        </span>
         <app-menu-item #menu [items]="item.children"></app-menu-item>
       </span>
       <!-- Leaf node buttons here -->
       <span *ngIf="!item.children || item.children.length === 0">
-        <button class="menu_icon" mat-button [routerLink]="item.route">
+        <span class="inner-menu-item" [routerLink]="item.route">
           <img width="15" *ngIf="item.displayIcon" [src]="item.displayIcon">
           <span>{{item.displayName}}</span>
-        </button>
+        </span>
       </span>
     </span>
   </div>
