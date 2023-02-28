@@ -82,6 +82,18 @@
     background-color: rgba($primary_color_lighter,0.6);
 }
 
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0.2em 0.2em 0 0.2em;
+}
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle, .mat-radio-outer-circle{
+  border-color: $primary_color;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: $primary_color;
+}
+
 // .form {
 //     &__group:not(:last-child) {
 //         margin-bottom: 2rem;

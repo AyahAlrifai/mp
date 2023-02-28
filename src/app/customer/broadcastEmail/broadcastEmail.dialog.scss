@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+.fill-width {
+    width: 98%;
+}
+
+.quill-editor {
+    display:block;
+    height: 100%;
+    margin: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-radio-button {
+    margin-left: 2rem;
+    margin: 0.5rem;
+}
+
+.auto-width {
+    height: 350px;
+}

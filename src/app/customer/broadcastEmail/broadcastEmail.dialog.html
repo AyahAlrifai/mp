@@ -1,1 +1,30 @@
-<quill-editor [styles]="{height: '400px'}" #taskControler (onContentChanged)="contentChanged($event)"></quill-editor>
+<div class="dialog">
+    <div class="dialog-header">
+        <span class="header-text"> Complete Settings</span>
+    </div>
+    <div class="dialog-body">
+        <form [formGroup]="broadcastemailForm">
+            <div class="uMarginBottom1">
+                <mat-label>Subject<span class="red-text">*</span></mat-label>
+                <input type="text" matInput formControlName="subject" placeholder="Subject"/>
+            </div>
+            <div class="uMarginBottom1">
+                <mat-label>Recipients<span class="red-text">*</span></mat-label>
+                <br>
+                <mat-radio-group formControlName="recipients">
+                    <mat-radio-button value="all">All Customers</mat-radio-button>
+                    <mat-radio-button value="selected">Selected Customers</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="uMarginBottom1 auto-width">
+                <mat-label>Message<span class="red-text">*</span></mat-label>
+                <quill-editor (onContentChanged)="contentChanged($event)" class="quill-editor"></quill-editor>
+            </div>
+
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="btn whiteBtn" type="button" mat-raised-button (click)="closeDialog()">Close</button>
+        <button class="btn primaryBtn" type="submit" [disabled]="isInvalid()" mat-raised-button (click)="send()">Confirm</button>
+    </div>
+</div>

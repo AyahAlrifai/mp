@@ -21,8 +21,8 @@ export class GridComponent implements OnInit {
   public pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
   
   public autoGroupColumnDef: ColDef = {
-    minWidth: 170,    
-    maxWidth: 400,
+    minWidth: 350,    
+    maxWidth: 500,
     headerValueGetter: params => {
       console.log(params);
       return `${params.colDef.headerName}`;
@@ -33,19 +33,6 @@ export class GridComponent implements OnInit {
       checkbox: true,
       suppressCount: true,
     },
-  };
-
-  public defaultColDef: ColDef = {
-    editable: false,
-    enableRowGroup: true,
-    enablePivot: true,
-    enableValue: true,
-    sortable: true,
-    resizable: true,
-    filter: true,
-    flex: 1,
-    minWidth: 170,    
-    maxWidth: 400,
   };
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {

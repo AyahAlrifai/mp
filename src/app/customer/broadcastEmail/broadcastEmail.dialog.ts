@@ -15,11 +15,12 @@ export class BroadcastEmailDialog {
     public editorValue = "";
 
     public broadcastemailForm: FormGroup = new FormGroup({
-        tirmenateDate: new FormControl("", Validators.required)
+        subject: new FormControl("", Validators.required),
+        recipients: new FormControl("", Validators.required)
     });
 
     constructor(public dialogRef: MatDialogRef<AccountNumberCell>, @Inject(MAT_DIALOG_DATA) public data: any) {
-
+        this.broadcastemailForm.controls.recipients.setValue(data.recipients);
     }
 
     public closeDialog(): void {
@@ -28,6 +29,16 @@ export class BroadcastEmailDialog {
 
     public contentChanged(obj: any) {
         this.editorValue = obj.html;
+    }
+
+    public isInvalid() : boolean {
+        return this.broadcastemailForm.invalid || this.editorValue == '';
+    }
+
+    public send() : void {
+        let x = this.broadcastemailForm.controls.subject.value;
+        let y = this.broadcastemailForm.controls.recipients.value;
+        this.dialogRef.close(`${x}   ${y}   ${this.editorValue}`);
     }
 
 }
