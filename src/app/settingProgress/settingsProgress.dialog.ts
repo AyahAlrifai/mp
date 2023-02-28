@@ -13,17 +13,17 @@ export class SettingsProgressDialog {
         {
             name:"Tax Engine",
             status:"completed",
-            route:"#"
+            route:"/"
         }, 
         {
             name:"Paymeny Gatway",
             status:"not completed",
-            route:"#"
+            route:"/"
         }, 
         {
             name:"StoreFront Settings",
             status:"completed",
-            route:"#"
+            route:"/"
         }, 
     ]
 

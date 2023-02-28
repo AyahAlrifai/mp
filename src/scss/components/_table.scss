@@ -3,3 +3,16 @@
 td {
     color:$primary_color_darkest;
 }
+
+::ng-deep .ag-row-hover:not(.ag-full-width-row)::before, .ag-row-hover.ag-full-width-row.ag-row-group::before {
+    background-color: $primary_color_lightest;
+}
+
+::ng-deep .ag-cell, .ag-full-width-row .ag-cell-wrapper.ag-row-group {
+    border: 0px solid $white-color;
+}
+
+::ng-deep .ag-cell-value {
+    color: $primary_color_darkest;
+    font-weight: 500;
+}

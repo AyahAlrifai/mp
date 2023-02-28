@@ -1,6 +1,8 @@
 @import "../abstract/variables";
 
 .form {
+
+  margin-top: 1.5rem;
   .item {
     &:not(:last-child) {
       margin-left: 1rem;
@@ -13,6 +15,10 @@
 
   .medium {
     width: 21rem;
+  }
+
+  .long {
+    width: 30rem;
   }
 
   .buttons {
@@ -75,6 +81,7 @@
 ::ng-deep .mat-calendar-body-in-range::before {
     background-color: rgba($primary_color_lighter,0.6);
 }
+
 // .form {
 //     &__group:not(:last-child) {
 //         margin-bottom: 2rem;

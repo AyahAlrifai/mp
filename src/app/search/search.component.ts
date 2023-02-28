@@ -15,6 +15,8 @@ export class SearchComponent implements OnInit {
   @Input() searchForm = new FormGroup({});
   @Output() onSearch = new EventEmitter();
 
+  public expanded = true;
+
   public panelOpenState = false;
 
   constructor(public customerService: CustomerService, public router: Router, public spinnerService: SpinnerService) {
@@ -23,7 +25,12 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  public setExpanded(value: boolean) : void  {
+    this.expanded = !value;
+  }
+
   public search() {
+    this.setExpanded(false);
     this.onSearch.emit(this.searchForm);
   }
 

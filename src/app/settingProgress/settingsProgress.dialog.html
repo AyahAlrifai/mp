@@ -9,8 +9,8 @@
             <tr class="task" *ngFor="let task of tasks">
                 <td>{{ task.name }}</td>
                 <td *ngIf="task.status == 'completed'" class="green-text center"><mat-icon>check_circle</mat-icon> {{ task.status }}</td>
-                <td *ngIf="task.status != 'completed'" class="red-text center"> <mat-icon>remove_circle</mat-icon> {{ task.status }}</td>
-                <td><a routerLink="{{ task.route }}"> <mat-icon>edit</mat-icon></a></td>
+                <td *ngIf="task.status != 'completed'" class="red-text center"> <mat-icon>cancel</mat-icon> {{ task.status }}</td>
+                <td><a routerLink="{{ task.route }}" (click)="closeDialog()"> <mat-icon>edit</mat-icon></a></td>
             </tr>
         </table>
     </div>

@@ -1,15 +1,4 @@
-@import "../../scss/abstract/variables";
-@import "../../scss/components/dialog";
-@import "../../scss/components/dialog";
-@import "../../scss/components/progressBar";
-@import "../../scss/components/table";
-@import "../../scss/base/utilities";
-
-.header {
-  color: $primary_color_darkest;
-  font-weight: 800;
-  padding-left: 1rem;
-}
+@import "../../styles.scss";
 
 .task-panle {
   width: 90%;

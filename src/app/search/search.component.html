@@ -1,5 +1,5 @@
 <mat-accordion style="margin: 50px;">
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel [expanded]="!expanded" (opened)="setExpanded(true)" (closed)="setExpanded(false)">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 <span class="panel-title">Search</span>
@@ -15,12 +15,12 @@
                     multiple>
                     <mat-option *ngFor="let item of searchField.list" [value]="item.key">{{item.value}}</mat-option>
                 </mat-select>
-                <span *ngIf="searchField.type == 'date'" style="display: flex;">
+                <span *ngIf="searchField.type == 'date'">
                     <mat-date-range-input [rangePicker]="campaignOnePicker">
                         <input matStartDate placeholder="Start date" formControlName="start">
                         <input matEndDate placeholder="End date" formControlName="end">
                     </mat-date-range-input>
-                    <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
                     <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
                 </span>
             </mat-form-field>

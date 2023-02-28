@@ -20,13 +20,18 @@
 
   .dialog-body {
     background-color: $white-color;
-    padding: 0.5rem;
+    margin: 1rem;
     height: 77%;
     overflow-y:auto;
+
+    .header {
+      color: $primary_color_darkest;
+      font-weight: 800;
+    }
   }
 
   .dialog-buttons {
-    border-top: 1px solid rgba($black-color, 0.4);
+    border-top: 1px solid $gray_color_2;
     display: flex;
     justify-content: flex-end;
     height: 3rem;

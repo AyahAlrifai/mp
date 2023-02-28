@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+.primary-cell {
+    display: flex;
+    justify-content: space-between;
+
+    .left-side {
+        display: flex;
+    }
+
+    &:hover .action-panel {
+        display: block;
+    }
+}
+
+.action-panel {
+    display:none;
+    margin-left: 0.6rem;
+
+    .action {
+        font-size: 1rem;
+        color: $gray_color_0;
+        cursor: pointer;
+    }
+}

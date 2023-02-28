@@ -1,0 +1,20 @@
+<div class="primary-cell">
+    <div class="left-side">
+        <a>{{value[0]}}</a>
+        <span class="action-panel">
+            <mat-icon aria-label="View" matTooltip="View" class="action" routerLink="/">visibility</mat-icon>
+            <mat-icon aria-label="Terminate" matTooltip="Terminate" class="action"
+                (click)="terminateCustomer()">not_interested</mat-icon>
+            <mat-icon aria-label="Immediatle Terminate" matTooltip="Immediatle Terminate" class="action"
+                (click)="ImmediatleTerminateCustomer()">not_interested</mat-icon>
+            <mat-icon aria-label="Broadcast Email" matTooltip="Broadcast Email" class="action"
+                (click)="broadcastEmail()"> email</mat-icon>
+            <mat-icon aria-label="Broadcast Alert Note" matTooltip="Broadcast Alert Note" class="action"
+                (click)="addAlert()">notifications</mat-icon>
+        </span>
+    </div>
+    <div
+        [ngClass]="{'green-text': value[1] == 'ACTIVE', 'red-text': value[1] == 'INACTIVE', 'orange-text':value[1] == 'SUSPENDED','bold':true }">
+        {{value[1]}}
+    </div>
+</div>

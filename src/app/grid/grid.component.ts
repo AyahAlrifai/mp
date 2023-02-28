@@ -13,25 +13,25 @@ export class GridComponent implements OnInit {
   @Input() public data: any = [];
   @Input() public columnDefs: ColDef[] = [];
   @Input() public rowsPerPage:number=10;
+  @Input() public noRowsTemplate="";
+  public noRowsTemplateValue="";
+
   public rowSelection: 'single' | 'multiple' = 'multiple';
   public rowGroupPanelShow: 'always' | 'onlyWhenGrouping' | 'never' = 'always';
   public pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
+  
   public autoGroupColumnDef: ColDef = {
-    headerName: 'Account Number',
     minWidth: 170,    
-    maxWidth: 200,
-    field: 'accountNumber',
-    valueGetter: (params) => {
-      if (params.node!.group) {
-        return params.node!.key;
-      } else {
-        return params.data[params.colDef.field!];
-      }
+    maxWidth: 400,
+    headerValueGetter: params => {
+      console.log(params);
+      return `${params.colDef.headerName}`;
     },
     headerCheckboxSelection: true,
     cellRenderer: 'agGroupCellRenderer',
     cellRendererParams: {
       checkbox: true,
+      suppressCount: true,
     },
   };
 
@@ -45,17 +45,19 @@ export class GridComponent implements OnInit {
     filter: true,
     flex: 1,
     minWidth: 170,    
-    maxWidth: 250,
+    maxWidth: 400,
   };
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
+    this.noRowsTemplateValue = `<div style='display: flex;flex-direction: column;align-items: center;'><img style="display:block" src='../../assets/img/no_data_found.svg'><h2 style="color:#000000;">${this.noRowsTemplate}</h2></div>`;
   }
 
   onGridReady(params: GridReadyEvent<any>) {
     this.gridApi = params.api;
+
   }
 
   onPageSizeChanged() {

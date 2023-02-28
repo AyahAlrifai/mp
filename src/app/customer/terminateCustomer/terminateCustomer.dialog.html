@@ -1,0 +1,25 @@
+<div class="dialog">
+    <div class="dialog-header">
+        <span class="header-text">Tirmenate Customer</span>
+    </div>
+    <div class="dialog-body">
+        <div class="header">are you sure you want to terminate the selected customer ({{ accountNumber }})?</div>
+        <form class="form" [formGroup]="tirmenateDate">
+            <mat-form-field *ngIf="showTerminateDate" appearance="outline"  class="item medium">
+                <mat-label>Terminate Date</mat-label>
+                <input matInput formControlName="tirmenateDate" [matDatepicker]="datepicker" required>
+                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker>
+                    <mat-datepicker-actions>
+                        <button mat-button matDatepickerCancel>Cancel</button>
+                        <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                    </mat-datepicker-actions>
+                </mat-datepicker>
+            </mat-form-field>
+            <div class="dialog-buttons">
+                <button class="btn whiteBtn" type="button" mat-raised-button (click)="closeDialog()">Close</button>
+                <button class="btn primaryBtn" type="submit" [disabled]="tirmenateDate.invalid && showTerminateDate" mat-raised-button (click)="confirm()">Confirm</button>
+            </div>
+        </form>
+    </div>
+</div>

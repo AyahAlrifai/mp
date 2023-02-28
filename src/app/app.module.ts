@@ -22,6 +22,11 @@ import { ModuleRegistry } from '@ag-grid-community/core';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
 import { SettingsProgressDialog } from './settingProgress/settingsProgress.dialog';
+import { AccountNumberCell } from './customer/AccountNumberCell/accountNumberCell.component';
+import { TerminateCustomerDialog } from './customer/terminateCustomer/terminateCustomer.dialog';
+import { QuillModule } from 'ngx-quill';
+import { BroadcastEmailDialog } from './customer/broadcastEmail/broadcastEmail.dialog';
+
 ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
 @NgModule({
@@ -35,8 +40,12 @@ ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
     GridActionComponent,
     GridComponent,
     SettingsProgressDialog,
+    TerminateCustomerDialog,
+    AccountNumberCell,
+    BroadcastEmailDialog
   ],
   imports: [
+    QuillModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
