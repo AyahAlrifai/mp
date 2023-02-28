@@ -24,8 +24,8 @@ import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-mod
 import { SettingsProgressDialog } from './settingProgress/settingsProgress.dialog';
 import { AccountNumberCell } from './customer/AccountNumberCell/accountNumberCell.component';
 import { TerminateCustomerDialog } from './customer/terminateCustomer/terminateCustomer.dialog';
-import { QuillModule } from 'ngx-quill';
 import { BroadcastEmailDialog } from './customer/broadcastEmail/broadcastEmail.dialog';
+import { QuillModule } from 'ngx-quill'
 
 ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
