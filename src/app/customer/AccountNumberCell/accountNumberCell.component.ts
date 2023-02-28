@@ -36,6 +36,7 @@ export class AccountNumberCell implements ICellRendererAngularComp {
     
     public broadcastEmail(): void {
         const dialogRef = this.dialog.open(BroadcastEmailDialog, {
+            disableClose: true,
             width: '60%',
             data:{"recipients":"selected"}
           });
@@ -50,6 +51,7 @@ export class AccountNumberCell implements ICellRendererAngularComp {
 
     public terminateCustomer(): void {
         const dialogRef = this.dialog.open(TerminateCustomerDialog, {
+            disableClose: true,
             width: '60%',
             data:{"accountNumber":this.value[0],"showTerminateDate":true}
           });
@@ -64,6 +66,7 @@ export class AccountNumberCell implements ICellRendererAngularComp {
 
     public ImmediatleTerminateCustomer(): void {
         const dialogRef = this.dialog.open(TerminateCustomerDialog, {
+            disableClose: true,
             width: '60%',
             data:{"accountNumber":this.value[0],"showTerminateDate":false}
           });

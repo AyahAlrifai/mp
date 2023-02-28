@@ -1,0 +1,10 @@
+@import "../abstract/variables";
+
+::ng-deep .mat-snack-bar-container {
+    background: $primary_color_darkest;
+    color: $white-color;
+}
+
+::ng-deep .mat-simple-snackbar-action {
+    color: $primary_color_lightest
+}
