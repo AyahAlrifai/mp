@@ -5,12 +5,12 @@
         <span>{{child.text}}</span>
         <mat-icon>{{ child.icon }}</mat-icon>
       </button>
-      <app-quick-menu-item #menu [items]="child.children"></app-quick-menu-item>
+      <app-quick-menu-item #menu [items]="child.children" [data]="this.data"></app-quick-menu-item>
     </span>
     <span *ngIf="!child.children || child.children.length === 0">
       <button mat-menu-item class="quick-item">
-        <span>{{child.text}}</span>
-        <mat-icon>{{ child.icon }}</mat-icon>
+        <span routerLink="child.textRoute">{{child.text}}</span>
+        <mat-icon (click)="openDialog(child.iconDialog,child.text)">{{ child.icon }}</mat-icon>
       </button>
     </span>
   </span>

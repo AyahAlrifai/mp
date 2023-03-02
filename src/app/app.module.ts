@@ -27,6 +27,7 @@ import { TerminateCustomerDialog } from './customer/terminateCustomer/terminateC
 import { BroadcastEmailDialog } from './customer/broadcastEmail/broadcastEmail.dialog';
 import { QuillModule } from 'ngx-quill'
 import { QuickMenuItemComponent } from './quickMenu/quickMenu.component';
+import { BasicDialog } from './basicDialog/basic.dialog';
 
 ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
@@ -43,6 +44,7 @@ ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
     GridComponent,
     SettingsProgressDialog,
     TerminateCustomerDialog,
+    BasicDialog,
     AccountNumberCell,
     BroadcastEmailDialog
   ],

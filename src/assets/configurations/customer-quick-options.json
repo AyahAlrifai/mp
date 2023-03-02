@@ -3,19 +3,19 @@
         "text": "",
         "textRoute": "",
         "icon": "menu",
-        "iconRoute": "",
+        "iconDialog": "",
         "children": [
             {
                 "text": "Service",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Product",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     }
                 ]
@@ -24,13 +24,13 @@
                 "text": "Contracts",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Contracts",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     }
                 ]
@@ -39,27 +39,27 @@
                 "text": "Orders",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Orders",
                         "textRoute": "/",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Qouts",
                         "textRoute": "/",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Master Agreement",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     }
                 ]
@@ -68,34 +68,34 @@
                 "text": "Billing",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Invoices",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Add HOC Invoices",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Usages History",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Milestone Invoices",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     }
                 ]
@@ -104,69 +104,69 @@
                 "text": "Payments",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Payments",
                         "textRoute": "/",
                         "icon": "settings",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Adjustments",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Add Credit Code",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Debit Note",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Refund Note",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Credit Card",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Bank Account",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Statments",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Recurring Payments",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     }
                 ]
@@ -175,13 +175,13 @@
                 "text": "Support",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Tickets",
                         "textRoute": "/",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     }
                 ]
@@ -190,41 +190,41 @@
                 "text": "Hierarchy",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Account Hierarchy",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Add Service Location",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Cost Center",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Department",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Generic Type",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     }
                 ]
@@ -233,41 +233,41 @@
                 "text": "Profile",
                 "textRoute": "",
                 "icon": "",
-                "iconRoute": "",
+                "iconDialog": "",
                 "children": [
                     {
                         "text": "Edit Profile",
                         "textRoute": "/",
                         "icon": "",
-                        "iconRoute": "",
+                        "iconDialog": "",
                         "children": []
                     },
                     {
                         "text": "Add Service Location",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Cost Center",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Department",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     },
                     {
                         "text": "Add Generic Type",
                         "textRoute": "",
                         "icon": "add",
-                        "iconRoute": "/",
+                        "iconDialog": "BasicDialog",
                         "children": []
                     }
                 ]

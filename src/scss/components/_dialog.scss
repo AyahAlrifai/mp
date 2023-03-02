@@ -21,7 +21,7 @@
   .dialog-body {
     background-color: $white-color;
     margin: 1rem;
-    height: 77%;
+    max-height: 80vh;
     overflow-y:auto;
 
     .header {

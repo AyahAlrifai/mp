@@ -3,5 +3,5 @@ export interface QuickMenuItem {
     textRoute:string;
     children:Array<QuickMenuItem>;
     icon:string;
-    iconRoute:string;
+    iconDialog:string;
   }

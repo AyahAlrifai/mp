@@ -1,0 +1,10 @@
+<div class="dialog">
+    <div class="dialog-header">
+        <span class="header-text">{{ dialogName }}</span>
+    </div>
+    <div class="dialog-body"  [innerHTML]="getAllData()">
+    </div>
+    <div class="dialog-buttons">
+        <button class="btn whiteBtn" type="button" mat-raised-button (click)="closeDialog()">Close</button>
+    </div>
+</div>
