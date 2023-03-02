@@ -3,7 +3,7 @@
         <span class="header-text">Tirmenate Customer</span>
     </div>
     <div class="dialog-body">
-        <div class="header">are you sure you want to terminate the selected customer ({{ accountNumber }})?</div>
+        <div class="header">are you sure you want to terminate the selected customer ({{ accountNumber }} - {{ companyName }})?</div>
         <form class="form" [formGroup]="tirmenateDate">
             <mat-form-field *ngIf="showTerminateDate" appearance="outline"  class="item medium">
                 <mat-label>Terminate Date</mat-label>

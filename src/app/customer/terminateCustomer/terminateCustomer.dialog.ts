@@ -11,6 +11,7 @@ import { AccountNumberCell } from '../AccountNumberCell/accountNumberCell.compon
 export class TerminateCustomerDialog {
 
     public accountNumber='';
+    public companyName='';
     public showTerminateDate = false;
     public tirmenateDate: FormGroup = new FormGroup({
         tirmenateDate:new FormControl("",Validators.required)
@@ -18,6 +19,7 @@ export class TerminateCustomerDialog {
 
     constructor(public dialogRef: MatDialogRef<AccountNumberCell>,@Inject(MAT_DIALOG_DATA) public data:any) {
         this.accountNumber=data.accountNumber;
+        this.companyName=data.companyName;
         this.showTerminateDate=data.showTerminateDate;
     }
 

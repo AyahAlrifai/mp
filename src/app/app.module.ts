@@ -26,6 +26,7 @@ import { AccountNumberCell } from './customer/AccountNumberCell/accountNumberCel
 import { TerminateCustomerDialog } from './customer/terminateCustomer/terminateCustomer.dialog';
 import { BroadcastEmailDialog } from './customer/broadcastEmail/broadcastEmail.dialog';
 import { QuillModule } from 'ngx-quill'
+import { QuickMenuItemComponent } from './quickMenu/quickMenu.component';
 
 ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
@@ -33,6 +34,7 @@ ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
   declarations: [
     AppComponent,
     MenuItemComponent,
+    QuickMenuItemComponent,
     HeaderComponent,
     CustomerComponent,
     SearchComponent,

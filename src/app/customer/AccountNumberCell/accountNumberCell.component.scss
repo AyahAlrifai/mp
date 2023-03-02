@@ -8,6 +8,10 @@
         display: flex;
     }
 
+    .right-side {
+        display: flex;
+    }
+
     &:hover .action-panel {
         display: block;
     }
@@ -16,10 +20,18 @@
 .action-panel {
     display:none;
     margin-left: 0.6rem;
+}
 
-    .action {
-        font-size: 1rem;
-        color: $gray_color_0;
-        cursor: pointer;
-    }
+.action {
+    font-size: 1rem;
+    color: $gray_color_0;
+    cursor: pointer;
+}
+
+.quick-action {
+    font-size: 0.8rem;
+    color: $primary_color;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    margin-left: 0.4rem;
 }

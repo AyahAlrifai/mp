@@ -12,34 +12,35 @@ export class GridComponent implements OnInit {
   private gridApi!: GridApi<any>;
   @Input() public data: any = [];
   @Input() public columnDefs: ColDef[] = [];
-  @Input() public rowsPerPage:number=10;
-  @Input() public noRowsTemplate="";
-  public noRowsTemplateValue="";
+  @Input() public rowsPerPage: number = 10;
+  @Input() public noRowsTemplate = "";
+  public noRowsTemplateValue = "";
 
   public rowSelection: 'single' | 'multiple' = 'multiple';
   public rowGroupPanelShow: 'always' | 'onlyWhenGrouping' | 'never' = 'always';
   public pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
-  
-  public autoGroupColumnDef: ColDef = {
-    minWidth: 350,    
+
+  public defaultColDef: ColDef = {
+    enableRowGroup: false,
+    editable: false,
+    enablePivot: false,
+    enableValue: false,
+    sortable: true,
+    resizable: true,
+    filter: true,
+    flex: 1,
+    minWidth: 250,
     maxWidth: 500,
-    headerValueGetter: params => {
-      console.log(params);
-      return `${params.colDef.headerName}`;
-    },
-    headerCheckboxSelection: true,
-    cellRenderer: 'agGroupCellRenderer',
-    cellRendererParams: {
-      checkbox: true,
-      suppressCount: true,
-    },
-  };
+    autoHeaderHeight:true,
+    autoHeight:true,
+    unSortIcon:true
+  }
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-    this.noRowsTemplateValue = `<div style='display: flex;flex-direction: column;align-items: center;'><img style="display:block" src='../../assets/img/no_data_found.svg'><h2 style="color:#000000;">${this.noRowsTemplate}</h2></div>`;
+    this.noRowsTemplateValue = `<div style='display: flex;flex-direction: column;align-items: center;'><img style="display:block" src='../../assets/img/no_data_found.svg'><h3 style="color:#000000;">${this.noRowsTemplate}</h3></div>`;
   }
 
   onGridReady(params: GridReadyEvent<any>) {

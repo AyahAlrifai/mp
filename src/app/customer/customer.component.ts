@@ -16,13 +16,20 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
+
+  public data: any = [];
   public columnDefs: ColDef[] = [
     {
-      "headerName": "Account Number",
-      "field": "accountNumber",
-      "headerCheckboxSelection": headerCheckboxSelection,
-      "checkboxSelection": checkboxSelection,
-      "cellRenderer": AccountNumberCell, // Component Cell Renderer
+      headerName: "Account Number",
+      field: "accountNumber",
+      headerCheckboxSelection: (params: HeaderCheckboxSelectionCallbackParams) => {
+        return params.columnApi.getRowGroupColumns().length === 0;
+      },
+      checkboxSelection: true,
+      cellRenderer: AccountNumberCell,
+      cellRendererParams:{
+        "data":this.data
+      },
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -31,12 +38,27 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 400,    
+      minWidth: 400,
+      maxWidth: 500,
+      pinned: 'left'
+    },
+    {
+      headerName: "Company Name",
+      field: "companyName",
+      enableRowGroup: false,
+      editable: false,
+      enablePivot: true,
+      enableValue: true,
+      sortable: true,
+      resizable: true,
+      filter: true,
+      flex: 1,
+      minWidth: 350,
       maxWidth: 500,
     },
     {
-      "headerName": "Company Name",
-      "field": "companyName",
+      headerName: "Contact Person",
+      field: "contact",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -45,12 +67,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 350,    
+      minWidth: 350,
       maxWidth: 500,
     },
     {
-      "headerName": "Contact Person",
-      "field": "contact",
+      headerName: "Parent Company",
+      field: "parentCompany",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -59,26 +81,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 350,    
-      maxWidth: 500,
-    },
-    {
-      "headerName": "Parent Company",
-      "field": "parentCompany",
-      enableRowGroup: false,
-      editable: false,
-      enablePivot: true,
-      enableValue: true,
-      sortable: true,
-      resizable: true,
-      filter: true,
-      flex: 1,
-      minWidth: 200,    
+      minWidth: 200,
       maxWidth: 300,
     },
     {
-      "headerName": "Phone Number",
-      "field": "phoneNumber",
+      headerName: "Phone Number",
+      field: "phoneNumber",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -87,13 +95,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 350,    
+      minWidth: 250,
       maxWidth: 500,
     },
     {
-      "headerName": "Category Name",
-      "field": "categoryName",
-      enableRowGroup: false,
+      headerName: "Category Name",
+      field: "categoryName",
       editable: false,
       enablePivot: true,
       enableValue: true,
@@ -101,14 +108,15 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 175,
       maxWidth: 300,
-      // "rowGroup": true, // for row grouping
-      // enableRowGroup: true
+      rowGroup: true, // for row grouping
+      hide: true,
+      enableRowGroup: true,
     },
     {
-      "headerName": "Cycle Name",
-      "field": "cycleName",      
+      headerName: "Cycle Name",
+      field: "cycleName",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -117,12 +125,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 150,
       maxWidth: 300,
     },
     {
-      "headerName": "Price Book",
-      "field": "planName",
+      headerName: "Price Book",
+      field: "planName",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -131,12 +139,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 150,
       maxWidth: 500,
     },
     {
-      "headerName": "External Id",
-      "field": "externalAccountId",
+      headerName: "External Id",
+      field: "externalAccountId",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -145,12 +153,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 150,
       maxWidth: 200,
     },
     {
-      "headerName": "Created Date",
-      "field": "createdDate",
+      headerName: "Created Date",
+      field: "createdDate",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -159,12 +167,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 175,
       maxWidth: 300,
     },
     {
-      "headerName": "Account Status",
-      "field": "accountStatus",
+      headerName: "Account Status",
+      field: "accountStatus",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -173,12 +181,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 175,
       maxWidth: 300,
     },
     {
-      "headerName": "Billable",
-      "field": "billable",
+      headerName: "Billable",
+      field: "billable",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -187,12 +195,12 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 150,
       maxWidth: 300,
     },
     {
-      "headerName": "Account Details777",
-      "field": "accountDetailDescription01",
+      headerName: "Account Details777",
+      field: "accountDetailDescription01",
       enableRowGroup: false,
       editable: false,
       enablePivot: true,
@@ -201,7 +209,7 @@ export class CustomerComponent implements OnInit {
       resizable: true,
       filter: true,
       flex: 1,
-      minWidth: 150,    
+      minWidth: 150,
       maxWidth: 300,
     }
   ];
@@ -211,14 +219,12 @@ export class CustomerComponent implements OnInit {
   private cycleList: any = [];
   private pricebookList: any = [];
   public searchFields: any;
-  private filePath: string = "customer-search-fields";
   private accountStatusList: any = [
     { key: "ACTIVE", value: "Active" },
     { key: "INACTIVE", value: "Inactive" },
     { key: "SUSPENDED", value: "Suspended" },
   ];
   public searchForm: FormGroup = new FormGroup({});
-  public data: any = [];
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar, public customerService: CustomerService, public spinnerService: SpinnerService) {
 
@@ -234,10 +240,9 @@ export class CustomerComponent implements OnInit {
       // this.customerService.getCycles(),
       // this.customerService.getPricebook(),
       // this.customerService.getCategories(),
-      this.http.get(`../../assets/configurations/${this.filePath}.json`)
+      this.http.get(`../../assets/configurations/customer-search-fields.json`)
     ).subscribe(([/*cycles, plans, categories, */searchFields]) => {
       this.spinnerService.hideSpinner();
-
       // plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
       //   this.pricebookList.push({ key: element.planCode, value: element.planName });
       // });
@@ -247,7 +252,6 @@ export class CustomerComponent implements OnInit {
       // categories.returnValue.data.forEach((element: { categoryName: any; categoryCode: any; }) => {
       //   this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
       // });
-
       this.searchFields = searchFields;
       this.updateSearchFields();
     }, err => {
@@ -3096,10 +3100,9 @@ export class CustomerComponent implements OnInit {
       }
     ]
 
-      this.data.forEach((v: any) => {
-        v.accountNumber = [v.accountNumber, v.accountStatus];
-        v.billable= v.billable == 'Y' ? "Billable" : "Unbillable";
-      });
+    this.data.forEach((v: any) => {
+      v.billable = v.billable == 'Y' ? "Billable" : "Unbillable";
+    });
   }
 
   private getFormattedDate(date: Date) {
@@ -3115,12 +3118,3 @@ export class CustomerComponent implements OnInit {
   }
 
 }
-
-
-const checkboxSelection = (params: CheckboxSelectionCallbackParams) => {
-  return params.columnApi.getRowGroupColumns().length === 0;
-};
-
-const headerCheckboxSelection = (params: HeaderCheckboxSelectionCallbackParams) => {
-  return params.columnApi.getRowGroupColumns().length === 0;
-};

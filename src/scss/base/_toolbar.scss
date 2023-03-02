@@ -1,0 +1,56 @@
+@import "../abstract/variables";
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: $primary_color;
+    color: $white_color;
+    font-weight: 600;
+    font-size: $font-size;
+  
+    img {
+      margin: 0 0.4rem;
+    }
+  
+    .left-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  
+      .menu-item {
+        padding: 0px;
+        margin: 0px;
+        margin-left: 0.8rem;
+        cursor: pointer;
+  
+      }
+    }
+  
+    .right-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .menu-item {
+        margin: 0px;
+        padding: 0px;
+        margin-right: 0.2rem;
+        cursor: pointer;
+  
+        &:last-child {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  
+    .inner-menu-item {
+      display: flex;
+    }
+  }
+  
+  .content {
+    margin: 1rem;
+  }
+  

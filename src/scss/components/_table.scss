@@ -1,18 +1,39 @@
 @import "../abstract/variables";
 
 td {
-    color:$primary_color_darkest;
+  color: $primary_color_darkest;
 }
 
-::ng-deep .ag-row-hover:not(.ag-full-width-row)::before, .ag-row-hover.ag-full-width-row.ag-row-group::before {
-    background-color: $primary_color_lightest;
+::ng-deep .ag-row-hover:not(.ag-full-width-row)::before,
+.ag-row-hover.ag-full-width-row.ag-row-group::before {
+  background-color: $gray_color_0;// $primary_color_lighter;
 }
 
-::ng-deep .ag-cell, .ag-full-width-row .ag-cell-wrapper.ag-row-group {
-    border: 0px solid $white-color;
+::ng-deep .ag-cell,
+.ag-full-width-row .ag-cell-wrapper.ag-row-group {
+  border: 0px solid $white-color;
 }
 
 ::ng-deep .ag-cell-value {
-    color: $primary_color_darkest;
-    font-weight: 500;
+  color: $primary_color_darkest;
+  font-weight: 500;
+}
+
+.ag-row.ag-row-level-0[tabindex="-1"] {
+  background-color: $primary_color_lightest;
+  font-weight: 700;
+  color: $primary_color_darkest;
+  border-bottom: 0.25rem solid $primary_color_darker;
+}
+
+.ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within,
+.ag-ltr .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+.ag-ltr .ag-full-width-row.ag-row-focus:focus .ag-cell-wrapper.ag-row-group,
+.ag-ltr .ag-cell-range-single-cell,
+.ag-ltr .ag-cell-range-single-cell.ag-cell-range-handle, .ag-rtl .ag-cell-focus:not(.ag-cell-range-selected):focus-within,
+.ag-rtl .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+.ag-rtl .ag-full-width-row.ag-row-focus:focus .ag-cell-wrapper.ag-row-group,
+.ag-rtl .ag-cell-range-single-cell,
+.ag-rtl .ag-cell-range-single-cell.ag-cell-range-handle {
+  border: none;
 }

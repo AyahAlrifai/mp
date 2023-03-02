@@ -1,6 +1,6 @@
 <div class="primary-cell">
     <div class="left-side">
-        <a>{{value[0]}}</a>
+        <a routerLink="/">{{value.accountNumber}}</a>
         <span class="action-panel">
             <mat-icon aria-label="View" matTooltip="View" class="action" routerLink="/">visibility</mat-icon>
             <mat-icon aria-label="Terminate" matTooltip="Terminate" class="action"
@@ -13,8 +13,24 @@
                 (click)="addAlert()">notifications</mat-icon>
         </span>
     </div>
-    <div
-        [ngClass]="{'green-text': value[1] == 'ACTIVE', 'red-text': value[1] == 'INACTIVE', 'orange-text':value[1] == 'SUSPENDED','bold':true }">
-        {{value[1]}}
+    <div class="right-side">
+        <div
+            [ngClass]="{'green-text': value.accountStatus == 'ACTIVE', 'red-text': value.accountStatus == 'INACTIVE', 'orange-text':value.accountStatus == 'SUSPENDED','bold':true}">
+            {{value.accountStatus}}
+        </div>
+        <span *ngFor="let item of customerQuickActions">
+            <span *ngIf="item.children && item.children.length > 0">
+                <span [matMenuTriggerFor]="menu.childMenu" class="quick-action">
+                    <span>{{item.text}}</span>
+                    <mat-icon>{{ item.icon }}</mat-icon>
+                </span>
+                <app-quick-menu-item #menu [items]="item.children"></app-quick-menu-item>
+            </span>
+
+            <span *ngIf="!item.children || item.children.length === 0" class="quick-action">
+                <span>{{item.text}}</span>
+                <mat-icon>{{ item.icon }}</mat-icon>
+            </span>
+        </span>
     </div>
 </div>

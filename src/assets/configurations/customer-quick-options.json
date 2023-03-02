@@ -1,0 +1,277 @@
+[
+    {
+        "text": "",
+        "textRoute": "",
+        "icon": "menu",
+        "iconRoute": "",
+        "children": [
+            {
+                "text": "Service",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Product",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Contracts",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Contracts",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Orders",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Orders",
+                        "textRoute": "/",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Qouts",
+                        "textRoute": "/",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Master Agreement",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Billing",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Invoices",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Add HOC Invoices",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Usages History",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Milestone Invoices",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Payments",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Payments",
+                        "textRoute": "/",
+                        "icon": "settings",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Adjustments",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Credit Code",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Debit Note",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Refund Note",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Credit Card",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Bank Account",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Statments",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Recurring Payments",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Support",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Tickets",
+                        "textRoute": "/",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Hierarchy",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Account Hierarchy",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Service Location",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Cost Center",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Department",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Generic Type",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "text": "Profile",
+                "textRoute": "",
+                "icon": "",
+                "iconRoute": "",
+                "children": [
+                    {
+                        "text": "Edit Profile",
+                        "textRoute": "/",
+                        "icon": "",
+                        "iconRoute": "",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Service Location",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Cost Center",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Department",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    },
+                    {
+                        "text": "Add Generic Type",
+                        "textRoute": "",
+                        "icon": "add",
+                        "iconRoute": "/",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]
