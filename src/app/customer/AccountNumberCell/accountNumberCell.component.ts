@@ -28,24 +28,17 @@ export class AccountNumberCell implements ICellRendererAngularComp {
     constructor(public dialog: MatDialog,private http: HttpClient, private _snackBar: MatSnackBar) {
     }
 
-    agInit(params: ICellRendererParams<any, any>): void {
-        if (params.data)
+    agInit(params: any): void {
+        if (params.data) {
+            console.log(params);
             this.value = params.data;
-        forkJoin(
-            this.http.get(`../../assets/configurations/customer-quick-options.json`)
-        ).subscribe(([customerQuickActions]) => {
-            this.customerQuickActions = customerQuickActions;
-        }, err => {
-            this._snackBar.open(err.message, "failed", {
-                horizontalPosition: "start",
-                verticalPosition: "bottom",
-            });
-        });
+            this.customerQuickActions = params.customerQuickActions;
+        }
     }
 
     refresh(params: ICellRendererParams) {
-        if (params.value)
-            this.value = params.value;
+        if (params.data)
+            this.value = params.data;
         return true;
     }
 
@@ -64,6 +57,7 @@ export class AccountNumberCell implements ICellRendererAngularComp {
             this._snackBar.open(result, "select", {
                 horizontalPosition: "start",
                 verticalPosition: "bottom",
+                duration:3000
             });
         });
     }
@@ -79,6 +73,7 @@ export class AccountNumberCell implements ICellRendererAngularComp {
             this._snackBar.open(result, "select", {
                 horizontalPosition: "start",
                 verticalPosition: "bottom",
+                duration:3000
             });
         });
     }
@@ -94,6 +89,7 @@ export class AccountNumberCell implements ICellRendererAngularComp {
             this._snackBar.open(result, "select", {
                 horizontalPosition: "start",
                 verticalPosition: "bottom",
+                duration:3000
             });
         });
     }

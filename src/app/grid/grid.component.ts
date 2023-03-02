@@ -1,6 +1,6 @@
 import { CheckboxSelectionCallbackParams, ColDef, GridApi, GridReadyEvent, HeaderCheckboxSelectionCallbackParams } from '@ag-grid-community/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -12,8 +12,12 @@ export class GridComponent implements OnInit {
   private gridApi!: GridApi<any>;
   @Input() public data: any = [];
   @Input() public columnDefs: ColDef[] = [];
-  @Input() public rowsPerPage: number = 10;
+  @Input() public rowsPerPage: number = 0;
+  @Input() public resultSize: number = 0;
   @Input() public noRowsTemplate = "";
+
+  @Output() public pageChange = new EventEmitter<any>();;
+
   public noRowsTemplateValue = "";
 
   public rowSelection: 'single' | 'multiple' = 'multiple';
@@ -48,10 +52,8 @@ export class GridComponent implements OnInit {
 
   }
 
-  onPageSizeChanged() {
-    var value = (document.getElementById('page-size') as HTMLInputElement)
-      .value;
-    this.gridApi.paginationSetPageSize(Number(value));
+  onPageSizeChanged(event:any) {
+    this.pageChange.emit(event);
   }
 
 }
