@@ -10,3 +10,12 @@
     color: $primary_color_darkest;
     font-weight: 600;
 }
+
+::ng-deep .mat-menu-item .mat-icon {
+    padding: 0px;
+    margin: 0px;
+}
+
+::ng-deep .mat-menu-panel {
+    width:16rem;
+}

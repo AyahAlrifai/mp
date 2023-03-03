@@ -1,12 +1,12 @@
 <div class="toolbar" role="banner">
   <div class="left-toolbar">
-    <img width="100" [src]="logo">
+    <img width="80" [src]="logo">
 
     <span class="menu-item" *ngFor="let item of navItems">
 
       <span *ngIf="item.children && item.children.length > 0">
         <span class="inner-menu-item" [matMenuTriggerFor]="menu.childMenu">
-          <img *ngIf="item.displayIcon" [src]="item.displayIcon">
+          <img *ngIf="item.displayIcon" [src]="item.displayIcon" width="25">
           <span>{{item.displayName}}</span>
           <mat-icon>expand_more</mat-icon>
         </span>
@@ -15,7 +15,7 @@
 
       <span *ngIf="!item.children || item.children.length === 0">
         <span class="inner-menu-item" [routerLink]="item.route">
-          <img *ngIf="item.displayIcon" [src]="item.displayIcon">
+          <img *ngIf="item.displayIcon" [src]="item.displayIcon" width="25">
           <span>{{item.displayName}}</span>
         </span>
       </span>
@@ -27,7 +27,7 @@
       <!-- Handle branch node buttons here -->
       <span *ngIf="item.children && item.children.length > 0">
         <span class="inner-menu-item" [matMenuTriggerFor]="menu.childMenu">
-          <img width="15" *ngIf="item.displayIcon" [src]="item.displayIcon">
+          <img width="25" *ngIf="item.displayIcon" [src]="item.displayIcon">
           <span>{{item.displayName}}</span>
           <mat-icon>expand_more</mat-icon>
         </span>
@@ -36,7 +36,7 @@
       <!-- Leaf node buttons here -->
       <span *ngIf="!item.children || item.children.length === 0">
         <span class="inner-menu-item" [routerLink]="item.route">
-          <img width="15" *ngIf="item.displayIcon" [src]="item.displayIcon">
+          <img width="25" *ngIf="item.displayIcon" [src]="item.displayIcon">
           <span>{{item.displayName}}</span>
         </span>
       </span>

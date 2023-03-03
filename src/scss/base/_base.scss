@@ -1,13 +1,13 @@
 @import "../abstract/variables";
 
-body {
+html,body {
     font-size: $font_size;
     line-height: $line_height;
     font-weight: $font_weight;
     font-family:$font_family !important;
     -ms-overflow-style: none !important;
     scrollbar-width:none !important;
-    
+
     &::-webkit-scrollbar {
       display: none !important;
     }
@@ -17,6 +17,7 @@ body {
     margin: 0rem;
     padding: 0rem;
     box-sizing: border-box;
+    font-size: $default-font-size;
 }
 
 ::-webkit-scrollbar {
@@ -35,4 +36,9 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: $primary_color_darkest;
+}
+
+::ng-deep .mat-icon {
+  vertical-align: middle;
+  font-size: 1.4rem;
 }
