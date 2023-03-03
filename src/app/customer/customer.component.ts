@@ -64,10 +64,9 @@ export class CustomerComponent implements OnInit {
       // });
       this.searchFields = searchFields;
       this.customerQuickActions = customerQuickActions;
-      console.log(this.customerQuickActions);
       this.updateSearchFields();
       this.initColDef();
-      //this.search();
+      this.search();
     }, err => {
       this.spinnerService.hideSpinner();
       this._snackBar.open(err.message, "failed", {

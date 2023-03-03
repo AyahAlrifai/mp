@@ -30,7 +30,6 @@ export class AccountNumberCell implements ICellRendererAngularComp {
 
     agInit(params: any): void {
         if (params.data) {
-            console.log(params);
             this.value = params.data;
             this.customerQuickActions = params.customerQuickActions;
         }
