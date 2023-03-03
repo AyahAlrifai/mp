@@ -22,7 +22,7 @@ export class CustomerComponent implements OnInit {
   public columnDefs: ColDef[] = [];
   public noRowsTemplate = "No Customers Found";
   public rowsPerPage: number = 100; // get it from server side
-  public resultSize: number = 16337; // get it from server side
+  public resultSize: number = 0; // get it from server side
   public currentPage: number = 0;
   private categoryList: any = [];
   private cycleList: any = [];
@@ -67,7 +67,7 @@ export class CustomerComponent implements OnInit {
       console.log(this.customerQuickActions);
       this.updateSearchFields();
       this.initColDef();
-      this.search();
+      //this.search();
     }, err => {
       this.spinnerService.hideSpinner();
       this._snackBar.open(err.message, "failed", {
@@ -77,6 +77,7 @@ export class CustomerComponent implements OnInit {
       });
     });
   }
+
   initColDef() {
     this.columnDefs = [
       {
@@ -354,8 +355,18 @@ export class CustomerComponent implements OnInit {
 
     this.spinnerService.showSpinner();
     this.customerService.search(body).subscribe(data => {
-      this.data = data.returnValue.data;
-      this.spinnerService.hideSpinner();
+      if (data.executionSuccessful) {
+        this.data = data.returnValue.data;
+        this.resultSize = data.returnValue.size;
+        this.spinnerService.hideSpinner();
+      } else {
+        this.spinnerService.hideSpinner();
+        this._snackBar.open(data.errorCode, "failed", {
+          horizontalPosition: "start",
+          verticalPosition: "bottom",
+          duration: 3000
+        });
+      }
     }, err => {
       this.spinnerService.hideSpinner();
       this._snackBar.open(err.message, "failed", {

@@ -1,33 +1,40 @@
+// blue
+// $primary_color_darkest: #1b548a;
+// $primary_color_darker: #4b7dac;
+// $primary_color: #4A83B7;
+// $primary_color_lighter: #a8d0f7;
+// $primary_color_lightest: #eaf0f4;
 
-$primary_color_darkest: #1b548a;
-$primary_color_darker: #4b7dac;
-$primary_color: #4A83B7;
-$primary_color_lighter: #a8d0f7;
-$primary_color_lightest: #eaf0f4;
+// yellow and green
+// $primary_color_darkest: #1c6103;
+// $primary_color_darker: #f2fa00;
+// $primary_color: #4fca23;
+// $primary_color_lighter: #f7ff60;
+// $primary_color_lightest: #cbffb8;
 
+// pink
+$primary_color_darkest: #7c1a48;
+$primary_color_darker: #d3075f;
+$primary_color: #b60e68;
+$primary_color_lighter: #fffacd;
+$primary_color_lightest: #ffe4c4;
 
-// $primary_color_darkest: #6f0653;
-// $primary_color_darker: #bc1996;
-// $primary_color: #4a70b7;
-// $primary_color_lighter: #f98cdcae;
-// $primary_color_lightest: #aebaf4;
+$red: #ff3939;
+$success_color: #05db05;
+$orange_color: #ffc400;
 
-$red:#ff0000;
-$success_color: #008000;
-$orange_color:#ff7b00;
-
-$font_size : 16px;
+$font_size: 16px;
 $default-font-size: 0.9rem;
-$font_family : 'Trebuchet MS';
+$font_family: "Trebuchet MS";
 
-$line_height : 1.7;
-$font_weight : 200;
+$line_height: 1.7;
+$font_weight: 200;
 
 $gray_color_0: #777777;
 $gray_color_1: #f7f7f7;
-$gray_color_2:#d2d1d1;
-$gray_color_3:#4c4c4c;
-$white_color : #ffffff;
+$gray_color_2: #d2d1d1;
+$gray_color_3: #4c4c4c;
+$white_color: #ffffff;
 $black_color: #000000;
 
 $grid-width: 80rem;

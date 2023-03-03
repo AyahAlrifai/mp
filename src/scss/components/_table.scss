@@ -6,7 +6,7 @@ td {
 
 ::ng-deep .ag-row-hover:not(.ag-full-width-row)::before,
 .ag-row-hover.ag-full-width-row.ag-row-group::before {
-  background-color: $gray_color_2;// $primary_color_lighter;
+  background-color: $primary_color_lighter;
 }
 
 ::ng-deep .ag-cell,
@@ -36,4 +36,12 @@ td {
 .ag-rtl .ag-cell-range-single-cell,
 .ag-rtl .ag-cell-range-single-cell.ag-cell-range-handle {
   border: none;
+}
+
+::ng-deep .ag-checkbox-input-wrapper.ag-checked::after {
+  color: $primary_color;
+}
+
+::ng-deep .ag-row-selected::before {
+  background-color: $primary_color_lightest;
 }
