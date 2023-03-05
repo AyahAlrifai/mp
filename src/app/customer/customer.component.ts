@@ -77,7 +77,7 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  initColDef() {
+  private initColDef() {
     this.columnDefs = [
       {
         headerName: "Account Number",
@@ -171,9 +171,9 @@ export class CustomerComponent implements OnInit {
         flex: 1,
         minWidth: 175,
         maxWidth: 300,
-        rowGroup: true, // for row grouping
-        hide: true,
-        enableRowGroup: true,
+        rowGroup: false, // for row grouping
+        hide: false,
+        enableRowGroup: false,
       },
       {
         headerName: "Cycle Name",
@@ -248,6 +248,9 @@ export class CustomerComponent implements OnInit {
       {
         headerName: "Billable",
         field: "billable",
+        cellRenderer: (params: { value: string; }) => {
+          return params.value == 'Y' ? "Billable" : "Unbillable";
+        },
         enableRowGroup: false,
         editable: false,
         enablePivot: true,
@@ -373,10 +376,6 @@ export class CustomerComponent implements OnInit {
         verticalPosition: "bottom",
         duration: 3000
       });
-    });
-
-    this.data.forEach((v: any) => {
-      v.billable = v.billable == 'Y' ? "Billable" : "Unbillable";
     });
   }
 

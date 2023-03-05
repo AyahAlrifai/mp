@@ -28,6 +28,8 @@ import { BroadcastEmailDialog } from './customer/broadcastEmail/broadcastEmail.d
 import { QuillModule } from 'ngx-quill'
 import { QuickMenuItemComponent } from './quickMenu/quickMenu.component';
 import { BasicDialog } from './basicDialog/basic.dialog';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomPaginator } from './grid/CustomPaginatorConfiguration';
 
 ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
@@ -62,7 +64,7 @@ ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [AppService,SpinnerService,CustomerService],
+  providers: [AppService,SpinnerService,CustomerService, { provide: MatPaginatorIntl, useValue: CustomPaginator() }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

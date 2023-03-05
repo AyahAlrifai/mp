@@ -1,6 +1,7 @@
-import { CheckboxSelectionCallbackParams, ColDef, GridApi, GridReadyEvent, HeaderCheckboxSelectionCallbackParams } from '@ag-grid-community/core';
+import { ColDef, GridApi, GridReadyEvent } from '@ag-grid-community/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -49,7 +50,6 @@ export class GridComponent implements OnInit {
 
   onGridReady(params: GridReadyEvent<any>) {
     this.gridApi = params.api;
-
   }
 
   onPageSizeChanged(event:any) {
