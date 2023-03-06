@@ -1,6 +1,6 @@
-import { CheckboxSelectionCallbackParams, ColDef, HeaderCheckboxSelectionCallbackParams } from '@ag-grid-community/core';
+import { ColDef, HeaderCheckboxSelectionCallbackParams } from '@ag-grid-community/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { forkJoin } from 'rxjs/internal/observable/forkJoin';
@@ -9,6 +9,7 @@ import { SearchFields } from '../search/search-fields';
 import { SearchDataModle } from '../search/search.data.model';
 import { SpinnerService } from '../spinner/spinner.service';
 import { CustomerService } from './customer.service';
+import { GridComponent } from '../grid/grid.component';
 
 @Component({
   selector: 'customer',
@@ -16,7 +17,6 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
-
   public data: any = [];
   public customerQuickActions: any = [];
   public columnDefs: ColDef[] = [];
@@ -28,6 +28,7 @@ export class CustomerComponent implements OnInit {
   private cycleList: any = [];
   private pricebookList: any = [];
   public searchFields: any;
+  public selectedRowData: any[] = [];
   private accountStatusList: any = [
     { key: "ACTIVE", value: "Active" },
     { key: "INACTIVE", value: "Inactive" },
@@ -43,7 +44,7 @@ export class CustomerComponent implements OnInit {
     this.loadRequiredData();
   }
 
-  private loadRequiredData() {
+  private loadRequiredData(): void {
     this.spinnerService.showSpinner();
     forkJoin(
       // this.customerService.getCycles(),
@@ -51,7 +52,7 @@ export class CustomerComponent implements OnInit {
       // this.customerService.getCategories(),
       this.http.get(`../../assets/configurations/customer-search-fields.json`),
       this.http.get(`../../assets/configurations/customer-quick-options.json`)
-    ).subscribe(([/*cycles, plans, categories, */searchFields, customerQuickActions]) => {
+    ).subscribe(([/*cycles, plans, categories,*/searchFields, customerQuickActions]) => {
       this.spinnerService.hideSpinner();
       // plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
       //   this.pricebookList.push({ key: element.planCode, value: element.planName });
@@ -77,15 +78,31 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  private initColDef() {
+  private initColDef(): void {
     this.columnDefs = [
       {
-        headerName: "Account Number",
-        field: "accountNumber",
+        headerName: "",
+        field: "pk",
         headerCheckboxSelection: (params: HeaderCheckboxSelectionCallbackParams) => {
           return params.columnApi.getRowGroupColumns().length === 0;
         },
         checkboxSelection: true,
+        enableRowGroup: false,
+        editable: false,
+        enablePivot: true,
+        enableValue: true,
+        sortable: false,
+        resizable: false,
+        filter: false,
+        lockPosition: 'left',
+        pinned: 'left',
+        minWidth: 50,
+        maxWidth: 50,
+        hide:false // set true if no need selection
+      },
+      {
+        headerName: "Account Number",
+        field: "accountNumber",
         cellRenderer: AccountNumberCell,
         cellRendererParams: {
           "data": this.data,
@@ -101,7 +118,8 @@ export class CustomerComponent implements OnInit {
         flex: 1,
         minWidth: 400,
         maxWidth: 500,
-        pinned: 'left'
+        lockPosition: 'left',
+        pinned: 'left',
       },
       {
         headerName: "Company Name",
@@ -340,17 +358,17 @@ export class CustomerComponent implements OnInit {
     this.sendSearchRequest();
   }
 
-  private sendSearchRequest() {
+  private sendSearchRequest(): void {
     let body = {
       "resourceId": 1,
       "loadData": true,
       "start": this.currentPage * 100,
       "length": this.rowsPerPage,
       "searchDataModel": this.searchDataModel,
-      // "sortDataModel": [{
-      //   "sortField": "accountNumber",
-      //   "direction": "ordrd"
-      // }],
+      "sortDataModel": [{
+        "sortField": "accountNumber",
+        "direction": "ordrd"
+      }],
       "dataHints": null,
       "sizeHints": null
     };
@@ -360,6 +378,9 @@ export class CustomerComponent implements OnInit {
       if (data.executionSuccessful) {
         this.data = data.returnValue.data;
         this.resultSize = data.returnValue.size;
+        this.data.forEach((element:any) => {
+          element.pk = element.accountNumber;
+        });
         this.spinnerService.hideSpinner();
       } else {
         this.spinnerService.hideSpinner();
@@ -379,7 +400,7 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  private getFormattedDate(date: Date) {
+  private getFormattedDate(date: Date): string {
     var year = date.getFullYear();
 
     var month = (1 + date.getMonth()).toString();
@@ -392,9 +413,19 @@ export class CustomerComponent implements OnInit {
   }
 
   public onPageChange(event: any): void {
+    console.log(this.selectedRowData);
     this.rowsPerPage = event.pageSize;
     this.currentPage = event.pageIndex;
     this.sendSearchRequest();
   }
 
+  public setSelectedRowData(selectedRowData: any): void {
+    if (this.selectedRowData.length != 0) {
+      this.selectedRowData = [...this.selectedRowData, ...selectedRowData];
+    } else {
+      this.selectedRowData = [...selectedRowData];
+    }
+    console.log(this.selectedRowData);
+    
+  }
 }

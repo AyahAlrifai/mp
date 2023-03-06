@@ -30,6 +30,7 @@ import { QuickMenuItemComponent } from './quickMenu/quickMenu.component';
 import { BasicDialog } from './basicDialog/basic.dialog';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './grid/CustomPaginatorConfiguration';
+import { GridConfigurationActionComponent } from './grid/gridConfigAction/gridConfigurationAction.component';
 
 ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
 
@@ -48,7 +49,8 @@ ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
     TerminateCustomerDialog,
     BasicDialog,
     AccountNumberCell,
-    BroadcastEmailDialog
+    BroadcastEmailDialog,
+    GridConfigurationActionComponent
   ],
   imports: [
     QuillModule.forRoot(),

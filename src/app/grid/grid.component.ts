@@ -1,4 +1,4 @@
-import { ColDef, GridApi, GridReadyEvent } from '@ag-grid-community/core';
+import { ColDef, FirstDataRenderedEvent, GridApi, GridReadyEvent, IRowNode } from '@ag-grid-community/core';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -16,8 +16,10 @@ export class GridComponent implements OnInit {
   @Input() public rowsPerPage: number = 0;
   @Input() public resultSize: number = 0;
   @Input() public noRowsTemplate = "";
+  @Input() public selectedData: any[] = [];
 
   @Output() public pageChange = new EventEmitter<any>();;
+  @Output() public selectedRowData = new EventEmitter<any>();;
 
   public noRowsTemplateValue = "";
 
@@ -36,9 +38,9 @@ export class GridComponent implements OnInit {
     flex: 1,
     minWidth: 250,
     maxWidth: 500,
-    autoHeaderHeight:true,
-    autoHeight:true,
-    unSortIcon:true
+    autoHeaderHeight: true,
+    autoHeight: true,
+    unSortIcon: true,
   }
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
@@ -52,8 +54,30 @@ export class GridComponent implements OnInit {
     this.gridApi = params.api;
   }
 
-  onPageSizeChanged(event:any) {
+  public onPageSizeChanged(event: any): void {
+    this.selectedRowData.emit(this.selectedData);
     this.pageChange.emit(event);
   }
 
+  public setSelectedRowData(): void {
+    let newSelectedRows = this.gridApi.getSelectedRows();
+    if (this.selectedData.length != 0) {
+      this.selectedData = [this.selectedData, ...newSelectedRows];
+    } else {
+      this.selectedData = [...newSelectedRows];
+    }
+  }
+
+  // onRowSelected(event: any) {
+  //   console.log("/*******************************************/");
+  //   console.log(event);
+  //   console.log(event.node.selected);
+  //   console.log(event.rowIndex);
+  // }
+
+  // onSelectionChanged(event: any) {
+  //   console.log("/*******************************************/");
+  //   console.log(event); // verify that the method is fired upon selection
+  //   // do the rest
+  // }
 }
