@@ -24,7 +24,6 @@
   </div>
   <div class="right-toolbar">
     <span class="menu-item" *ngFor="let item of toolbarItems">
-      <!-- Handle branch node buttons here -->
       <span *ngIf="item.children && item.children.length > 0">
         <span class="inner-menu-item" [matMenuTriggerFor]="menu.childMenu">
           <img width="25" *ngIf="item.displayIcon" [src]="item.displayIcon">
@@ -33,7 +32,6 @@
         </span>
         <app-menu-item #menu [items]="item.children"></app-menu-item>
       </span>
-      <!-- Leaf node buttons here -->
       <span *ngIf="!item.children || item.children.length === 0">
         <span class="inner-menu-item" [routerLink]="item.route">
           <img width="25" *ngIf="item.displayIcon" [src]="item.displayIcon">

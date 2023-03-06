@@ -1,6 +1,32 @@
 <div class="grid-config-action">
-    <mat-icon>refresh</mat-icon>
-    <mat-icon>settings_applications</mat-icon>
-    <mat-icon>add_box</mat-icon>
-    <mat-icon> call_made</mat-icon>
+
+    <span><mat-icon>refresh</mat-icon></span>
+
+    <span>
+        <span class="menu" [matMenuTriggerFor]="settings"><mat-icon>settings_applications</mat-icon><mat-icon>expand_more</mat-icon></span>
+        <mat-menu #settings="matMenu">
+            <button class="menu-item" mat-menu-item>Column</button>
+            <button class="menu-item" mat-menu-item>Density</button>
+            <button class="menu-item" mat-menu-item>Sticky columns</button>
+            <button class="menu-item" mat-menu-item>GroupBy</button>
+            <button class="menu-item" mat-menu-item>Save</button>
+            <button class="menu-item" mat-menu-item>Reset</button>
+        </mat-menu>
+    </span>
+
+    <span>
+        <span [matMenuTriggerFor]="add"><mat-icon>add_box</mat-icon><mat-icon>expand_more</mat-icon></span>
+        <mat-menu #add="matMenu">
+            <button class="menu-item" mat-menu-item>Search & add customer</button>
+            <button class="menu-item" mat-menu-item>add customer</button>
+        </mat-menu>
+    </span>
+
+    <span>
+        <span [matMenuTriggerFor]="export"><mat-icon>call_made</mat-icon><mat-icon>expand_more</mat-icon></span>
+        <mat-menu #export="matMenu">
+            <button class="menu-item" mat-menu-item>CSV</button>
+            <button class="menu-item" mat-menu-item>EXCEL</button>
+        </mat-menu>
+    </span>
 </div>
