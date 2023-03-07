@@ -31,65 +31,65 @@
   }
 }
 
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+ .mat-form-field-appearance-outline .mat-form-field-outline {
   color: $primary_color_lightest !important;
 }
 
-::ng-deep
+
   .mat-form-field-appearance-outline.mat-focused
   .mat-form-field-outline-thick {
   color: $primary_color !important;
 }
 
-::ng-deep .mat-form-field-label {
+ .mat-form-field-label {
   color: $black_color !important;
 }
 
-::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+ .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
   color: $primary_color !important;
 }
 
-::ng-deep .mat-primary .mat-pseudo-checkbox-checked,
+ .mat-primary .mat-pseudo-checkbox-checked,
 .mat-primary .mat-pseudo-checkbox-indeterminate {
   background-color: $primary_color;
 }
 
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+ .mat-form-field-appearance-fill .mat-form-field-flex {
   padding: 0.2em 0.2em 0 0.2em;
 }
 
 // radio
-::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle, .mat-radio-outer-circle{
+ .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle, .mat-radio-outer-circle{
   border-color: $primary_color;
 }
 
-::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+ .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
   background-color: $primary_color;
 }
 
 // menu
-::ng-deep .mat-select-arrow , ::ng-deep .mat-select-value, ::ng-deep .mat-option-text {
+ .mat-select-arrow ,  .mat-select-value,  .mat-option-text {
   color: $primary_color_darkest;
   font-weight: 600;
 }
 
-::ng-deep .mat-menu-item {
+ .mat-menu-item {
   color:$primary_color_darkest
 }
 
 
-::ng-deep .mat-icon-button {
+ .mat-icon-button {
   color: $primary_color;
 }
 
 //calendar
 
-::ng-deep .mat-calendar-body-cell-content {
+ .mat-calendar-body-cell-content {
   color: $primary_color;
   border-color: transparent;
 }
 
-::ng-deep
+
   .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
   > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(
     .mat-calendar-body-comparison-identical
@@ -108,11 +108,11 @@
   color: $primary_color_darkest !important;
 }
 
-::ng-deep .mat-calendar-body-selected {
+ .mat-calendar-body-selected {
   background-color: $primary_color_darkest;
   color: $white-color;
 }
 
-::ng-deep .mat-calendar-body-in-range::before {
+ .mat-calendar-body-in-range::before {
     background-color: rgba($primary_color_lighter,0.6);
 }

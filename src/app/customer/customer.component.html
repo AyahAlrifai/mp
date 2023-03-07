@@ -1,5 +1,5 @@
 <div style="height: auto;">
     <header-view name="Customer"></header-view>
     <search-view [searchFields]="searchFields" [searchForm]="searchForm" (onSearch)="search()"></search-view>
-    <grid #grid [selectedData]="selectedRowData" [data]="data" [columnDefs]="columnDefs" [rowsPerPage]="rowsPerPage" [resultSize]="resultSize" [noRowsTemplate]="noRowsTemplate" (selectedRowData)="setSelectedRowData($event)" (pageChange)="onPageChange($event)"></grid>
+    <grid #grid [selectedData]="selectedRowData" [gridConfigActions]="gridConfigActions" [data]="data" [columnDefs]="columnDefs" [rowsPerPage]="rowsPerPage" [resultSize]="resultSize" [noRowsTemplate]="noRowsTemplate" (selectedRowData)="setSelectedRowData($event)" (pageChange)="onPageChange($event)"></grid>
 </div>

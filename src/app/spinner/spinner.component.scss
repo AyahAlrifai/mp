@@ -18,6 +18,6 @@
     left: 45%;
 }
 
-::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+ .mat-progress-spinner circle, .mat-spinner circle {
     stroke: $primary_color;
 }

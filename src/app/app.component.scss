@@ -1,12 +1,7 @@
 @import "../styles.scss";
 
-::ng-deep .mat-icon {
-    font-size: 1rem;
-    height: 1rem;
-    width: 1rem;
-    font-weight: 600;
-    padding: 0.5rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-
+ .mat-icon {
+  font-size: 1.5rem;
+  width: auto;
+  line-height: 1.3;
   }

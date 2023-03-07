@@ -31,8 +31,10 @@ import { BasicDialog } from './basicDialog/basic.dialog';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CustomPaginator } from './grid/CustomPaginatorConfiguration';
 import { GridConfigurationActionComponent } from './grid/gridConfigAction/gridConfigurationAction.component';
+import { CsvExportModule } from '@ag-grid-community/csv-export';
+import { ExcelExportModule } from '@ag-grid-enterprise/excel-export';
 
-ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
+ModuleRegistry.registerModules([ExcelExportModule, CsvExportModule, RowGroupingModule, ClientSideRowModelModule]);
 
 @NgModule({
   declarations: [
@@ -66,7 +68,7 @@ ModuleRegistry.registerModules([RowGroupingModule,ClientSideRowModelModule]);
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [AppService,SpinnerService,CustomerService, { provide: MatPaginatorIntl, useValue: CustomPaginator() }],
+  providers: [AppService, SpinnerService, CustomerService, { provide: MatPaginatorIntl, useValue: CustomPaginator() }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

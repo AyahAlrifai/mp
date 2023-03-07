@@ -19,6 +19,7 @@ import { GridComponent } from '../grid/grid.component';
 export class CustomerComponent implements OnInit {
   public data: any = [];
   public customerQuickActions: any = [];
+  public gridConfigActions: any = {};
   public columnDefs: ColDef[] = [];
   public noRowsTemplate = "No Customers Found";
   public rowsPerPage: number = 100; // get it from server side
@@ -51,8 +52,9 @@ export class CustomerComponent implements OnInit {
       // this.customerService.getPricebook(),
       // this.customerService.getCategories(),
       this.http.get(`../../assets/configurations/customer-search-fields.json`),
-      this.http.get(`../../assets/configurations/customer-quick-options.json`)
-    ).subscribe(([/*cycles, plans, categories,*/searchFields, customerQuickActions]) => {
+      this.http.get(`../../assets/configurations/customer-quick-options.json`),
+      this.http.get(`../../assets/configurations/customer-grid-configuration-action.json`)
+    ).subscribe(([/*cycles, plans, categories,*/searchFields, customerQuickActions,gridConfigActions]) => {
       this.spinnerService.hideSpinner();
       // plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
       //   this.pricebookList.push({ key: element.planCode, value: element.planName });
@@ -65,6 +67,9 @@ export class CustomerComponent implements OnInit {
       // });
       this.searchFields = searchFields;
       this.customerQuickActions = customerQuickActions;
+      this.gridConfigActions = gridConfigActions;
+      console.log(this.gridConfigActions);
+      
       this.updateSearchFields();
       this.initColDef();
       this.search();
@@ -190,7 +195,6 @@ export class CustomerComponent implements OnInit {
         minWidth: 175,
         maxWidth: 300,
         rowGroup: false, // for row grouping
-        hide: false,
         enableRowGroup: false,
       },
       {
@@ -279,6 +283,7 @@ export class CustomerComponent implements OnInit {
         flex: 1,
         minWidth: 150,
         maxWidth: 300,
+        hide:true
       },
       {
         headerName: "Account Details777",
@@ -293,6 +298,7 @@ export class CustomerComponent implements OnInit {
         flex: 1,
         minWidth: 150,
         maxWidth: 300,
+        hide:true
       }
     ];
   }

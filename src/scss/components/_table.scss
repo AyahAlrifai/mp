@@ -4,17 +4,17 @@ td {
   color: $primary_color_darkest;
 }
 
-::ng-deep .ag-row-hover:not(.ag-full-width-row)::before,
+ .ag-row-hover:not(.ag-full-width-row)::before,
 .ag-row-hover.ag-full-width-row.ag-row-group::before {
   background-color: $primary_color_lighter;
 }
 
-::ng-deep .ag-cell,
+ .ag-cell,
 .ag-full-width-row .ag-cell-wrapper.ag-row-group {
   border: 0px solid $white-color;
 }
 
-::ng-deep .ag-cell-value {
+ .ag-cell-value {
   color: $primary_color_darkest;
   font-weight: 500;
 }
@@ -38,10 +38,10 @@ td {
   border: none;
 }
 
-::ng-deep .ag-checkbox-input-wrapper.ag-checked::after {
+ .ag-checkbox-input-wrapper.ag-checked::after {
   color: $primary_color;
 }
 
-::ng-deep .ag-row-selected::before {
+ .ag-row-selected::before {
   background-color: $primary_color_lightest;
 }

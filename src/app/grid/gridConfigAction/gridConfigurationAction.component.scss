@@ -1,18 +1,25 @@
 @import "../../../styles.scss";
 
-.menu-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 0.2rem;
-    align-items: center;
-    color: $primary_color_darkest;
-    font-weight: 600;
+.menu {
+    margin-right: 1rem;
 }
 
-::ng-deep .mat-icon {
-    font-size: 2rem;
+.menu-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $primary_color_darkest;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+ .mat-icon {
+    font-size: 1.5rem;
     margin-right: 0.4rem;
     color:$primary_color_darkest;
+    margin-right: 0px;
+    width: auto;
+}
+
+::ng-deep .mat-menu-panel {
+    min-width: 15rem;
 }

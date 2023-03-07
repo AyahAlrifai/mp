@@ -1,32 +1,74 @@
 <div class="grid-config-action">
-
-    <span><mat-icon>refresh</mat-icon></span>
-
+    <!-- refresh -->
+    <span class="menu"><mat-icon>refresh</mat-icon></span>
+    <!-- settings -->
     <span>
-        <span class="menu" [matMenuTriggerFor]="settings"><mat-icon>settings_applications</mat-icon><mat-icon>expand_more</mat-icon></span>
+        <span class="menu"
+            [matMenuTriggerFor]="settings"><mat-icon>settings_applications</mat-icon><mat-icon>expand_more</mat-icon></span>
         <mat-menu #settings="matMenu">
-            <button class="menu-item" mat-menu-item>Column</button>
-            <button class="menu-item" mat-menu-item>Density</button>
-            <button class="menu-item" mat-menu-item>Sticky columns</button>
-            <button class="menu-item" mat-menu-item>GroupBy</button>
+            <!-- columns -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="columns">Column</button>
+            <!-- density -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="density">Density</button>
+            <!-- sticky columns -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="stickyColumns">Sticky columns</button>
+            <!-- group by -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="groupBy">GroupBy</button>
+            <!-- save -->
             <button class="menu-item" mat-menu-item>Save</button>
+            <!-- reset -->
             <button class="menu-item" mat-menu-item>Reset</button>
         </mat-menu>
-    </span>
 
-    <span>
+        <!-- columns -->
+        <mat-menu #columns="matMenu">
+            <span *ngFor="let col of columnDefs">
+                <button *ngIf="!col.checkboxSelection" class="menu-item" mat-menu-item (click)="toggleColumn($event,col.field)">
+                    <mat-icon *ngIf="!col.hide">check</mat-icon>
+                    {{col.headerName}}
+                </button>
+            </span>
+        </mat-menu>
+
+        <!-- density -->
+        <mat-menu #density="matMenu">
+            <button class="menu-item" mat-menu-item>Density</button>
+            <button class="menu-item" mat-menu-item>Sticky columns</button>
+        </mat-menu>
+
+        <!-- sticky Columns -->
+        <mat-menu #stickyColumns="matMenu">
+            <button class="menu-item" mat-menu-item>Dense</button>
+            <button class="menu-item" mat-menu-item>Compact</button>
+            <button class="menu-item" mat-menu-item>Medium</button>
+            <button class="menu-item" mat-menu-item>Expanded</button>
+            <button class="menu-item" mat-menu-item>Spacios</button>
+        </mat-menu>
+
+        <!-- group By -->
+        <mat-menu #groupBy="matMenu">
+            <span *ngFor="let col of columnDefs">
+                <button *ngIf="!col.checkboxSelection" class="menu-item" mat-menu-item (click)="setGroupBY(col.field)">
+                    <mat-icon *ngIf="col.enableRowGroup && col.rowGroup">check</mat-icon>
+                    {{col.headerName}}
+                </button>
+            </span>
+        </mat-menu>
+    </span>
+    <!-- add -->
+    <span class="menu">
         <span [matMenuTriggerFor]="add"><mat-icon>add_box</mat-icon><mat-icon>expand_more</mat-icon></span>
         <mat-menu #add="matMenu">
             <button class="menu-item" mat-menu-item>Search & add customer</button>
             <button class="menu-item" mat-menu-item>add customer</button>
         </mat-menu>
     </span>
-
-    <span>
+    <!-- export -->
+    <span class="menu">
         <span [matMenuTriggerFor]="export"><mat-icon>call_made</mat-icon><mat-icon>expand_more</mat-icon></span>
         <mat-menu #export="matMenu">
-            <button class="menu-item" mat-menu-item>CSV</button>
-            <button class="menu-item" mat-menu-item>EXCEL</button>
+            <button class="menu-item" (click)="onDownloadCSV()" mat-menu-item>CSV</button>
+            <button class="menu-item" (click)="onDownloadExcel()" mat-menu-item>EXCEL</button>
         </mat-menu>
     </span>
 </div>

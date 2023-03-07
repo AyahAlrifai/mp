@@ -6,17 +6,17 @@
     align-items: center;
 }
 
-::ng-deep .mat-paginator-range-label , ::ng-deep .mat-paginator-page-size-label{
+ .mat-paginator-range-label ,  .mat-paginator-page-size-label{
     color: $primary_color_darkest;
     font-size: 0.85rem;
     font-weight: 700;
 }
 
-::ng-deep .mat-paginator-icon {
+ .mat-paginator-icon {
     color: $primary_color_darkest;
     font-weight: 700;
 }
 
-::ng-deep .mat-icon-button.mat-button-disabled.mat-button-disabled .mat-paginator-icon {
+ .mat-icon-button.mat-button-disabled.mat-button-disabled .mat-paginator-icon {
     color: rgba($primary_color_darkest,0.5);
 }

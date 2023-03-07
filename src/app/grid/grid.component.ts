@@ -13,6 +13,7 @@ export class GridComponent implements OnInit {
   private gridApi!: GridApi<any>;
   @Input() public data: any = [];
   @Input() public columnDefs: ColDef[] = [];
+  @Input() public gridConfigActions: any= {};
   @Input() public rowsPerPage: number = 0;
   @Input() public resultSize: number = 0;
   @Input() public noRowsTemplate = "";
@@ -22,9 +23,9 @@ export class GridComponent implements OnInit {
   @Output() public selectedRowData = new EventEmitter<any>();;
 
   public noRowsTemplateValue = "";
-
+  public groupDefaultExpanded : number=-1;
   public rowSelection: 'single' | 'multiple' = 'multiple';
-  public rowGroupPanelShow: 'always' | 'onlyWhenGrouping' | 'never' = 'always';
+  public rowGroupPanelShow: 'always' | 'onlyWhenGrouping' | 'never' = 'never';
   public pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
 
   public defaultColDef: ColDef = {
@@ -51,7 +52,7 @@ export class GridComponent implements OnInit {
   }
 
   onGridReady(params: GridReadyEvent<any>) {
-    this.gridApi = params.api;
+    this.gridApi = params.api;    
   }
 
   public onPageSizeChanged(event: any): void {
@@ -66,6 +67,21 @@ export class GridComponent implements OnInit {
     } else {
       this.selectedData = [...newSelectedRows];
     }
+  }
+
+  public onDownloadCSV(event: any): void {
+    this.gridApi.exportDataAsCsv();
+  }
+
+  public onDownloadExcel(event : any) : void {
+    this.gridApi.exportDataAsExcel({
+      sheetName:"sheet1",
+      author:"Ayah Alrefai"
+    });
+  }
+
+  public onColDefChange(event : any) :void {
+    this.columnDefs = [...event];    
   }
 
   // onRowSelected(event: any) {

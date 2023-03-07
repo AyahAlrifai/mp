@@ -1,0 +1,58 @@
+{
+    "column": [
+        {
+            "name": "Account Number",
+            "key": "accountNumber"
+        },
+        {
+            "name": "Company Name",
+            "key": "companyName"
+        },
+        {
+            "name": "Contact Person",
+            "key": "contact"
+        },
+        {
+            "name": "Parent Company",
+            "key": "parentCompany"
+        },
+        {
+            "name": "Phone Number",
+            "key": "phoneNumber"
+        },
+        {
+            "name": "Category Name",
+            "key": "categoryName"
+        },
+        {
+            "name": "Cycle Name",
+            "key": "cycleName"
+        },
+        {
+            "name": "Price Book",
+            "key": "planName"
+        },
+        {
+            "name": "External Id",
+            "key": "externalAccountId"
+        },
+        {
+            "name": "Created Date",
+            "key": "createdDate"
+        },
+        {
+            "name": "Account Status",
+            "key": "accountStatus"
+        },
+        {
+            "name": "Billable",
+            "key": "billable"
+        },
+        {
+            "name": "Account Details777",
+            "key": "accountDetailDescription01"
+        }
+    ],
+    "sticky_column": [],
+    "group_by": []
+}
