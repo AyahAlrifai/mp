@@ -11,13 +11,13 @@
             <!-- density -->
             <button class="menu-item" mat-menu-item [matMenuTriggerFor]="density">Density</button>
             <!-- sticky columns -->
-            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="stickyColumns">Sticky columns</button>
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="stickyColumns">Pinned columns</button>
             <!-- group by -->
             <button class="menu-item" mat-menu-item [matMenuTriggerFor]="groupBy">GroupBy</button>
             <!-- save -->
-            <button class="menu-item" mat-menu-item>Save</button>
+            <button class="menu-item" mat-menu-item (click)="saveColDef()">Save</button>
             <!-- reset -->
-            <button class="menu-item" mat-menu-item>Reset</button>
+            <button class="menu-item" mat-menu-item (click)="resetColDef()">Reset</button>
         </mat-menu>
 
         <!-- columns -->
@@ -32,12 +32,6 @@
 
         <!-- density -->
         <mat-menu #density="matMenu">
-            <button class="menu-item" mat-menu-item>Density</button>
-            <button class="menu-item" mat-menu-item>Sticky columns</button>
-        </mat-menu>
-
-        <!-- sticky Columns -->
-        <mat-menu #stickyColumns="matMenu">
             <button class="menu-item" mat-menu-item>Dense</button>
             <button class="menu-item" mat-menu-item>Compact</button>
             <button class="menu-item" mat-menu-item>Medium</button>
@@ -45,10 +39,20 @@
             <button class="menu-item" mat-menu-item>Spacios</button>
         </mat-menu>
 
+        <!-- sticky Columns -->
+        <mat-menu #stickyColumns="matMenu">
+            <span *ngFor="let col of columnDefs">
+                <button *ngIf="col.pinned != null && !col.checkboxSelection" class="menu-item" mat-menu-item (click)="pinnedColumn($event,col.field)">
+                    <mat-icon *ngIf="col.pinned">check</mat-icon>
+                    {{col.headerName}}
+                </button>
+            </span>
+        </mat-menu>
+
         <!-- group By -->
         <mat-menu #groupBy="matMenu">
             <span *ngFor="let col of columnDefs">
-                <button *ngIf="!col.checkboxSelection" class="menu-item" mat-menu-item (click)="setGroupBY(col.field)">
+                <button *ngIf="col.enableRowGroup" class="menu-item" mat-menu-item (click)="setGroupBY($event,col.field)">
                     <mat-icon *ngIf="col.enableRowGroup && col.rowGroup">check</mat-icon>
                     {{col.headerName}}
                 </button>

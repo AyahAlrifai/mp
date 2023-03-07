@@ -4,7 +4,7 @@
     (page)="onPageSizeChanged($event)"></mat-paginator>
   <grid-config-action [gridConfigActions]="gridConfigActions" [columnDefs]="columnDefs"
     (downloadCSV)="onDownloadCSV($event)" (downloadExcel)="onDownloadExcel($event)"
-    (onColDefChange)="onColDefChange($event)"></grid-config-action>
+    (onColDefChange)="onColDefChange($event)" (onSaveColDef)="saveColDef($event)" (onResetColDef)="resetColDef($event)"></grid-config-action>
 </div>
 <ag-grid-angular style="height: 600px;" class="ag-theme-alpine" [columnDefs]="columnDefs"
   [defaultColDef]="defaultColDef" [suppressRowClickSelection]="true" [overlayNoRowsTemplate]="noRowsTemplateValue"

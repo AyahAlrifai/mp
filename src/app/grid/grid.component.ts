@@ -21,6 +21,8 @@ export class GridComponent implements OnInit {
 
   @Output() public pageChange = new EventEmitter<any>();;
   @Output() public selectedRowData = new EventEmitter<any>();;
+  @Output() public onSaveColDef = new EventEmitter<any>();
+  @Output() public onResetColDef = new EventEmitter<any>();
 
   public noRowsTemplateValue = "";
   public groupDefaultExpanded : number=-1;
@@ -82,6 +84,14 @@ export class GridComponent implements OnInit {
 
   public onColDefChange(event : any) :void {
     this.columnDefs = [...event];    
+  }
+
+  public resetColDef(columnDefs : any) : void {
+    this.onResetColDef.emit(columnDefs);
+  }
+
+  public saveColDef(columnDefs : any) : void {
+    this.onSaveColDef.emit(columnDefs)
   }
 
   // onRowSelected(event: any) {

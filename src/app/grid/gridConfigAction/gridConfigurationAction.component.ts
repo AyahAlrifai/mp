@@ -9,9 +9,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class GridConfigurationActionComponent implements OnInit {
   @Input() public gridConfigActions: { "column": Array<any> } = { "column": [] };
   @Input() public columnDefs: ColDef[] = [];
-  @Output() public downloadCSV = new EventEmitter<any>();;
-  @Output() public downloadExcel = new EventEmitter<any>();;
-  @Output() public onColDefChange = new EventEmitter<any>();;
+  @Output() public downloadCSV = new EventEmitter<any>();
+  @Output() public downloadExcel = new EventEmitter<any>();
+  @Output() public onColDefChange = new EventEmitter<any>();
+  @Output() public onSaveColDef = new EventEmitter<any>();
+  @Output() public onResetColDef = new EventEmitter<any>();
 
   ngOnInit(): void {
   }
@@ -37,18 +39,41 @@ export class GridConfigurationActionComponent implements OnInit {
 
   }
 
-  public setGroupBY(key: string | undefined): void {
+  public setGroupBY(event: any, key: string | undefined): void {
     if (key) {
       for (let i = 0; i < this.columnDefs.length; i++) {
         if (this.columnDefs[i].field == key) {
-          this.columnDefs[i].enableRowGroup = !this.columnDefs[i].enableRowGroup;
           this.columnDefs[i].rowGroup = !this.columnDefs[i].rowGroup;
         } else {
-          this.columnDefs[i].enableRowGroup = false;
           this.columnDefs[i].rowGroup = false;
         }
       }
       this.onColDefChange.emit(this.columnDefs);
+      event.stopPropagation();
     }
+  }
+
+  public pinnedColumn(event: any, key: string | undefined): void {
+    if (key) {
+      for (let i = 0; i < this.columnDefs.length; i++) {
+        if (this.columnDefs[i].pinned != null && this.columnDefs[i].field != 'pk') {
+          if (this.columnDefs[i].field == key) {
+            this.columnDefs[i].pinned = true;
+          } else {
+            this.columnDefs[i].pinned = false;
+          }
+        }
+      }
+      this.onColDefChange.emit(this.columnDefs);
+      event.stopPropagation();
+    }
+  }
+
+  public resetColDef() : void {
+    this.onResetColDef.emit(this.columnDefs);
+  }
+
+  public saveColDef() : void {
+    this.onSaveColDef.emit(this.columnDefs)
   }
 }
