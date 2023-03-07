@@ -2,9 +2,9 @@
 <div class="pagination-panel">
   <mat-paginator [length]="resultSize" [pageSize]="rowsPerPage" [pageSizeOptions]="[5, 10, 25, 100]" pageIndex="0"
     (page)="onPageSizeChanged($event)"></mat-paginator>
-  <grid-config-action [gridConfigActions]="gridConfigActions" [columnDefs]="columnDefs"
-    (downloadCSV)="onDownloadCSV($event)" (downloadExcel)="onDownloadExcel($event)"
-    (onColDefChange)="onColDefChange($event)" (onSaveColDef)="saveColDef($event)" (onResetColDef)="resetColDef($event)"></grid-config-action>
+  <grid-config-action [addIconActions]="addIconActions" [columnDefs]="columnDefs" (downloadCSV)="onDownloadCSV($event)"
+    (downloadExcel)="onDownloadExcel($event)" (onColDefChange)="onColDefChange($event)"
+    (onSaveColDef)="saveColDef($event)" (onResetColDef)="resetColDef($event)"></grid-config-action>
 </div>
 <ag-grid-angular style="height: 600px;" class="ag-theme-alpine" [columnDefs]="columnDefs"
   [defaultColDef]="defaultColDef" [suppressRowClickSelection]="true" [overlayNoRowsTemplate]="noRowsTemplateValue"

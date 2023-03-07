@@ -13,11 +13,11 @@ export class GridComponent implements OnInit {
   private gridApi!: GridApi<any>;
   @Input() public data: any = [];
   @Input() public columnDefs: ColDef[] = [];
-  @Input() public gridConfigActions: any= {};
   @Input() public rowsPerPage: number = 0;
   @Input() public resultSize: number = 0;
   @Input() public noRowsTemplate = "";
   @Input() public selectedData: any[] = [];
+  @Input() public addIconActions: any[] = [];
 
   @Output() public pageChange = new EventEmitter<any>();;
   @Output() public selectedRowData = new EventEmitter<any>();;

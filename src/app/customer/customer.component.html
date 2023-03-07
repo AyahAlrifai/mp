@@ -1,8 +1,9 @@
 <div style="height: auto;">
     <header-view name="Customer"></header-view>
     <search-view [searchFields]="searchFields" [searchForm]="searchForm" (onSearch)="search()"></search-view>
-    <grid #grid [selectedData]="selectedRowData" [gridConfigActions]="gridConfigActions" [data]="data"
+    <grid #grid [selectedData]="selectedRowData" [data]="data" [addIconActions]="addIconActions"
         [columnDefs]="columnDefs" [rowsPerPage]="rowsPerPage" [resultSize]="resultSize"
         [noRowsTemplate]="noRowsTemplate" (selectedRowData)="setSelectedRowData($event)"
-        (pageChange)="onPageChange($event)" (onSaveColDef)="saveColDef($event)" (onResetColDef)="resetColDef($event)"></grid>
+        (pageChange)="onPageChange($event)" (onSaveColDef)="saveColDef($event)" (onResetColDef)="resetColDef($event)">
+    </grid>
 </div>

@@ -23,7 +23,8 @@
         <!-- columns -->
         <mat-menu #columns="matMenu">
             <span *ngFor="let col of columnDefs">
-                <button *ngIf="!col.checkboxSelection" class="menu-item" mat-menu-item (click)="toggleColumn($event,col.field)">
+                <button *ngIf="!col.checkboxSelection" class="menu-item" mat-menu-item
+                    (click)="toggleColumn($event,col.field)">
                     <mat-icon *ngIf="!col.hide">check</mat-icon>
                     {{col.headerName}}
                 </button>
@@ -42,7 +43,8 @@
         <!-- sticky Columns -->
         <mat-menu #stickyColumns="matMenu">
             <span *ngFor="let col of columnDefs">
-                <button *ngIf="col.pinned != null && !col.checkboxSelection" class="menu-item" mat-menu-item (click)="pinnedColumn($event,col.field)">
+                <button *ngIf="col.pinned != null && !col.checkboxSelection" class="menu-item" mat-menu-item
+                    (click)="pinnedColumn($event,col.field)">
                     <mat-icon *ngIf="col.pinned">check</mat-icon>
                     {{col.headerName}}
                 </button>
@@ -52,7 +54,8 @@
         <!-- group By -->
         <mat-menu #groupBy="matMenu">
             <span *ngFor="let col of columnDefs">
-                <button *ngIf="col.enableRowGroup" class="menu-item" mat-menu-item (click)="setGroupBY($event,col.field)">
+                <button *ngIf="col.enableRowGroup" class="menu-item" mat-menu-item
+                    (click)="setGroupBY($event,col.field)">
                     <mat-icon *ngIf="col.enableRowGroup && col.rowGroup">check</mat-icon>
                     {{col.headerName}}
                 </button>
@@ -61,11 +64,15 @@
     </span>
     <!-- add -->
     <span class="menu">
-        <span [matMenuTriggerFor]="add"><mat-icon>add_box</mat-icon><mat-icon>expand_more</mat-icon></span>
-        <mat-menu #add="matMenu">
-            <button class="menu-item" mat-menu-item>Search & add customer</button>
-            <button class="menu-item" mat-menu-item>add customer</button>
-        </mat-menu>
+        <span *ngFor="let item of addIconActions">
+            <span *ngIf="item.children && item.children.length > 0">
+                <span [matMenuTriggerFor]="menu.childMenu" class="quick-action">
+                    <span>{{item.text}}</span>
+                    <mat-icon>{{ item.icon }}</mat-icon> <mat-icon>expand_more</mat-icon>
+                </span>
+                <app-quick-menu-item #menu [items]="item.children" data=""></app-quick-menu-item>
+            </span>
+        </span>
     </span>
     <!-- export -->
     <span class="menu">

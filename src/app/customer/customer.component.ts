@@ -19,7 +19,7 @@ import { GridComponent } from '../grid/grid.component';
 export class CustomerComponent implements OnInit {
   public data: any = [];
   public customerQuickActions: any = [];
-  public gridConfigActions: any = {};
+  public addIconActions: any = {};
   public columnDefs: ColDef[] = [];
   public noRowsTemplate = "No Customers Found";
   public rowsPerPage: number = 100; // get it from server side
@@ -51,10 +51,12 @@ export class CustomerComponent implements OnInit {
       // this.customerService.getCycles(),
       // this.customerService.getPricebook(),
       // this.customerService.getCategories(),
+      this.http.get(`../../assets/configurations/default-customer-column-def.json`),
+      this.http.get(`../../assets/configurations/customer-column-def.json`),
       this.http.get(`../../assets/configurations/customer-search-fields.json`),
       this.http.get(`../../assets/configurations/customer-quick-options.json`),
       this.http.get(`../../assets/configurations/customer-grid-configuration-action.json`)
-    ).subscribe(([/*cycles, plans, categories,*/searchFields, customerQuickActions, gridConfigActions]) => {
+    ).subscribe(([/*cycles, plans, categories,*/defaultColDef,colDef, searchFields, customerQuickActions, addIconActions]) => {
       this.spinnerService.hideSpinner();
       // plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
       //   this.pricebookList.push({ key: element.planCode, value: element.planName });
@@ -65,13 +67,17 @@ export class CustomerComponent implements OnInit {
       // categories.returnValue.data.forEach((element: { categoryName: any; categoryCode: any; }) => {
       //   this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
       // });
+      if(!colDef) {
+        this.columnDefs = defaultColDef as ColDef[];
+      } else {
+        this.columnDefs = colDef as ColDef[];
+      }
       this.searchFields = searchFields;
       this.customerQuickActions = customerQuickActions;
-      this.gridConfigActions = gridConfigActions;
-      console.log(this.gridConfigActions);
+      this.addIconActions = addIconActions;
 
+      this.editColDef();
       this.updateSearchFields();
-      this.initColDef();
       this.search();
     }, err => {
       this.spinnerService.hideSpinner();
@@ -83,235 +89,28 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  private initColDef(): void {
-    this.columnDefs = [
-      {
-        headerName: "",
-        field: "pk",
-        headerCheckboxSelection: (params: HeaderCheckboxSelectionCallbackParams) => {
-          return params.columnApi.getRowGroupColumns().length === 0;
-        },
-        checkboxSelection: true,
-        enableRowGroup: false,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: false,
-        resizable: false,
-        filter: false,
-        lockPosition: 'left',
-        pinned: 'left',
-        minWidth: 50,
-        maxWidth: 50,
-        hide: false // set true if no need selection
-      },
-      {
-        headerName: "Account Number",
-        field: "accountNumber",
-        cellRenderer: AccountNumberCell,
-        cellRendererParams: {
-          "data": this.data,
-          "customerQuickActions": this.customerQuickActions
-        },
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 350,
-        maxWidth: 500,
-        lockPosition: 'left',
-        pinned: 'left',
-      },
-      {
-        headerName: "Company Name",
-        field: "companyName",
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 350,
-        maxWidth: 500,
-        enableRowGroup: true,
-        pinned: false
-      },
-      {
-        headerName: "Contact Person",
-        field: "contact",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 350,
-        maxWidth: 500,
-        pinned: false
-      },
-      {
-        headerName: "Parent Company",
-        field: "parentCompany",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 200,
-        maxWidth: 300,
-        pinned: false
-      },
-      {
-        headerName: "Phone Number",
-        field: "phoneNumber",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 250,
-        maxWidth: 500,
-        pinned: false
-      },
-      {
-        headerName: "Category Name",
-        field: "categoryName",
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 175,
-        maxWidth: 300,
-        enableRowGroup: true,
-        pinned: false
-      },
-      {
-        headerName: "Cycle Name",
-        field: "cycleName",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 150,
-        maxWidth: 300,
-        pinned: false
-      },
-      {
-        headerName: "Price Book",
-        field: "planName",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 150,
-        maxWidth: 500,
-        pinned: false
-      },
-      {
-        headerName: "External Id",
-        field: "externalAccountId",
-        enableRowGroup: false,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 150,
-        maxWidth: 200,
-        pinned: false
-      },
-      {
-        headerName: "Created Date",
-        field: "createdDate",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 175,
-        maxWidth: 300,
-        pinned: null
-      },
-      {
-        headerName: "Account Status",
-        field: "accountStatus",
-        enableRowGroup: true,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 175,
-        maxWidth: 300,
-        pinned: null
-      },
-      {
-        headerName: "Billable",
-        field: "billable",
-        cellRenderer: (params: { value: string; }) => {
-          return params.value == 'Y' ? "Billable" : "Unbillable";
-        },
-        enableRowGroup: false,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 150,
-        maxWidth: 300,
-        hide: true,
-        pinned: false
-      },
-      {
-        headerName: "Account Details777",
-        field: "accountDetailDescription01",
-        enableRowGroup: false,
-        editable: false,
-        enablePivot: true,
-        enableValue: true,
-        sortable: true,
-        resizable: true,
-        filter: true,
-        flex: 1,
-        minWidth: 150,
-        maxWidth: 300,
-        hide: true,
-        pinned: null
+  private editColDef(): void {
+    for (let i = 0; i < this.columnDefs.length; i++) {
+      switch (this.columnDefs[i].field) {
+        case "pk":
+          this.columnDefs[i].headerCheckboxSelection = (params: HeaderCheckboxSelectionCallbackParams) => {
+            return params.columnApi.getRowGroupColumns().length === 0;
+          }
+          break;
+        case "accountNumber":
+          this.columnDefs[i].cellRenderer = AccountNumberCell
+          this.columnDefs[i].cellRendererParams = {
+            "data": this.data,
+            "customerQuickActions": this.customerQuickActions
+          }
+          break;
+        case "billable":
+          this.columnDefs[i].cellRenderer = (params: { value: string; }) => {
+            return params.value == 'Y' ? "Billable" : "Unbillable";
+          }
+          break;
       }
-    ];
+    }
   }
 
   private updateSearchFields(): void {
@@ -448,10 +247,20 @@ export class CustomerComponent implements OnInit {
 
   public resetColDef(colDef: any): void {
     // send api request
-    this._snackBar.open("should send api request to get default column def", "success", {
-      horizontalPosition: "start",
-      verticalPosition: "bottom",
-      duration: 3000
+    this.spinnerService.showSpinner();
+    forkJoin(
+      this.http.get(`../../assets/configurations/default-customer-column-def.json`)
+    ).subscribe(([colDef]) => {
+      this.spinnerService.hideSpinner();
+      this.columnDefs = colDef as ColDef[];
+      this.editColDef();
+    }, err => {
+      this.spinnerService.hideSpinner();
+      this._snackBar.open(err.message, "failed", {
+        horizontalPosition: "start",
+        verticalPosition: "bottom",
+        duration: 3000
+      });
     });
   }
 

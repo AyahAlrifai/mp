@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class GridConfigurationActionComponent implements OnInit {
   @Input() public gridConfigActions: { "column": Array<any> } = { "column": [] };
   @Input() public columnDefs: ColDef[] = [];
+  @Input() public addIconActions: any[] = [];
   @Output() public downloadCSV = new EventEmitter<any>();
   @Output() public downloadExcel = new EventEmitter<any>();
   @Output() public onColDefChange = new EventEmitter<any>();
@@ -16,6 +17,7 @@ export class GridConfigurationActionComponent implements OnInit {
   @Output() public onResetColDef = new EventEmitter<any>();
 
   ngOnInit(): void {
+    console.log(this.addIconActions);  
   }
 
   public onDownloadExcel(): void {
