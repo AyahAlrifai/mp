@@ -33,12 +33,14 @@ import { CustomPaginator } from './grid/CustomPaginatorConfiguration';
 import { GridConfigurationActionComponent } from './grid/gridConfigAction/gridConfigurationAction.component';
 import { CsvExportModule } from '@ag-grid-community/csv-export';
 import { ExcelExportModule } from '@ag-grid-enterprise/excel-export';
+import { HomeComponent } from './home/home.component';
 
 ModuleRegistry.registerModules([ExcelExportModule, CsvExportModule, RowGroupingModule, ClientSideRowModelModule]);
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     MenuItemComponent,
     QuickMenuItemComponent,
     HeaderComponent,
