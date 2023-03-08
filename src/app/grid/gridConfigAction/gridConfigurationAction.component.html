@@ -33,11 +33,11 @@
 
         <!-- density -->
         <mat-menu #density="matMenu">
-            <button class="menu-item" mat-menu-item>Dense</button>
-            <button class="menu-item" mat-menu-item>Compact</button>
-            <button class="menu-item" mat-menu-item>Medium</button>
-            <button class="menu-item" mat-menu-item>Expanded</button>
-            <button class="menu-item" mat-menu-item>Spacios</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Dense')"><mat-icon *ngIf="currentDensity == 'Dense'">check</mat-icon>Dense</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Compact')"><mat-icon *ngIf="currentDensity == 'Compact'">check</mat-icon>Compact</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Medium')"><mat-icon *ngIf="currentDensity == 'Medium'">check</mat-icon>Medium</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Expanded')"><mat-icon *ngIf="currentDensity == 'Expanded'">check</mat-icon>Expanded</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Spacios')"><mat-icon *ngIf="currentDensity == 'Spacios'">check</mat-icon>Spacios</button>
         </mat-menu>
 
         <!-- sticky Columns -->

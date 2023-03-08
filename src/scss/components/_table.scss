@@ -1,10 +1,7 @@
 @import "../abstract/variables";
 
-td {
-  color: $primary_color_darkest;
-}
 
- .ag-row-hover:not(.ag-full-width-row)::before,
+.ag-row-hover:not(.ag-full-width-row)::before,
 .ag-row-hover.ag-full-width-row.ag-row-group::before {
   background-color: $primary_color_lighter;
 }
@@ -17,13 +14,6 @@ td {
  .ag-cell-value {
   color: $primary_color_darkest;
   font-weight: 500;
-}
-
-.ag-row.ag-row-level-0[tabindex="-1"] {
-  background-color: $primary_color_lightest;
-  font-weight: 700;
-  color: $primary_color_darkest;
-  border-bottom: 0.25rem solid $primary_color_darker;
 }
 
 .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within,
@@ -42,6 +32,22 @@ td {
   color: $primary_color;
 }
 
- .ag-row-selected::before {
+//  .ag-row-selected::before {
+//   background-color: $primary_color_lighter;
+//   color: $primary_color_darker !important;
+// }
+
+.ag-row.ag-row-level-0[tabindex="-1"] {
   background-color: $primary_color_lightest;
+  font-weight: 700;
+  color: $primary_color_darkest;
+  border-bottom: 0.25rem solid $primary_color_darker;
+}
+
+.ag-row-no-focus {
+  color: $primary_color_darkest;
+}
+
+.ag-theme-alpine .ag-row {
+  font-size: inherit;
 }

@@ -22,6 +22,7 @@ export class CustomerComponent implements OnInit {
   public addIconActions: any = {};
   public columnDefs: ColDef[] = [];
   public noRowsTemplate = "No Customers Found";
+  public currentDensity: string = "Compact";
   public rowsPerPage: number = 100; // get it from server side
   public resultSize: number = 0; // get it from server side
   public currentPage: number = 0;

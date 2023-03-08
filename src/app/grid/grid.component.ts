@@ -18,6 +18,7 @@ export class GridComponent implements OnInit {
   @Input() public noRowsTemplate = "";
   @Input() public selectedData: any[] = [];
   @Input() public addIconActions: any[] = [];
+  @Input() public currentDensity: string = "Compact";
 
   @Output() public pageChange = new EventEmitter<any>();;
   @Output() public selectedRowData = new EventEmitter<any>();;
@@ -25,10 +26,18 @@ export class GridComponent implements OnInit {
   @Output() public onResetColDef = new EventEmitter<any>();
 
   public noRowsTemplateValue = "";
-  public groupDefaultExpanded : number=-1;
+  public groupDefaultExpanded: number = -1;
   public rowSelection: 'single' | 'multiple' = 'multiple';
   public rowGroupPanelShow: 'always' | 'onlyWhenGrouping' | 'never' = 'never';
   public pivotPanelShow: 'always' | 'onlyWhenPivoting' | 'never' = 'always';
+  public densityMap = {
+    "Dense": { 'font-size': '0.75rem' },
+    "Compact": { 'font-size': '1rem' },
+    "Medium": { 'font-size': '1.25rem' },
+    "Expanded": { 'font-size': '1.50rem' },
+    "Spacios": { 'font-size': '1.75rem' },
+  }
+  public density = this.densityMap.Compact;
 
   public defaultColDef: ColDef = {
     enableRowGroup: false,
@@ -50,11 +59,13 @@ export class GridComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setDensity(this.currentDensity)
+
     this.noRowsTemplateValue = `<div style='display: flex;flex-direction: column;align-items: center;'><img style="display:block" src='../../assets/img/no_data_found.svg'><h3 style="color:#000000;">${this.noRowsTemplate}</h3></div>`;
   }
 
   onGridReady(params: GridReadyEvent<any>) {
-    this.gridApi = params.api;    
+    this.gridApi = params.api;
   }
 
   public onPageSizeChanged(event: any): void {
@@ -75,35 +86,37 @@ export class GridComponent implements OnInit {
     this.gridApi.exportDataAsCsv();
   }
 
-  public onDownloadExcel(event : any) : void {
+  public onDownloadExcel(event: any): void {
     this.gridApi.exportDataAsExcel({
-      sheetName:"sheet1",
-      author:"Ayah Alrefai"
+      sheetName: "sheet1",
+      author: "Ayah Alrefai"
     });
   }
 
-  public onColDefChange(event : any) :void {
-    this.columnDefs = [...event];    
+  public onColDefChange(event: any): void {
+    this.columnDefs = [...event];
   }
 
-  public resetColDef(columnDefs : any) : void {
+  public resetColDef(columnDefs: any): void {
     this.onResetColDef.emit(columnDefs);
   }
 
-  public saveColDef(columnDefs : any) : void {
+  public saveColDef(columnDefs: any): void {
     this.onSaveColDef.emit(columnDefs)
   }
 
-  // onRowSelected(event: any) {
-  //   console.log("/*******************************************/");
-  //   console.log(event);
-  //   console.log(event.node.selected);
-  //   console.log(event.rowIndex);
-  // }
-
-  // onSelectionChanged(event: any) {
-  //   console.log("/*******************************************/");
-  //   console.log(event); // verify that the method is fired upon selection
-  //   // do the rest
-  // }
+  public setDensity(density: string) {
+    this.currentDensity = density;
+    if (density == "Compact") {
+      this.density = this.densityMap.Compact;
+    } else if (density == "Dense") {
+      this.density = this.densityMap.Dense;
+    } else if (density == "Expanded") {
+      this.density = this.densityMap.Expanded;
+    } else if (density == "Medium") {
+      this.density = this.densityMap.Medium;
+    } else if (density == "Spacios") {
+      this.density = this.densityMap.Spacios;
+    }
+  }
 }
