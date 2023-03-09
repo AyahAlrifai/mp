@@ -1,47 +1,131 @@
 @keyframes moveInTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-3.25rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-3.25rem);
+  }
 
-    80% {
-        transform: translateY(0.25rem);
-    }
+  80% {
+    transform: translateY(0.25rem);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0rem);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(3.25rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(3.25rem);
+  }
 
-    80% {
-        transform: translateY(-0.25rem);
-    }
+  80% {
+    transform: translateY(-0.25rem);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0rem);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }
 
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-3.25rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-3.25rem);
+  }
 
-    80% {
-        transform: translateX(0.25rem);
-    }
+  80% {
+    transform: translateX(0.25rem);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0rem);
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes angry {
+  10% {
+    transform: translateY(-2rem);
+  }
+
+  20% {
+    transform: translateY(2rem);
+  }
+
+  30% {
+    transform: translateY(-2rem);
+  }
+
+  40% {
+    transform: translateY(2rem);
+  }
+
+  50% {
+    transform: translateY(-2rem);
+  }
+
+  60% {
+    transform: translateY(2rem);
+  }
+
+  70% {
+    transform: translateY(-2rem);
+  }
+
+  80% {
+    transform: translateY(2rem);
+  }
+
+  90% {
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    transform: translateY(2rem);
+  }
+}
+
+@keyframes happy {
+  10% {
+    transform: translateX(-2rem);
+  }
+
+  20% {
+    transform: translateX(2rem);
+  }
+
+  30% {
+    transform: translateX(-2rem);
+  }
+
+  40% {
+    transform: translateX(2rem);
+  }
+
+  50% {
+    transform: translateX(-2rem);
+  }
+
+  60% {
+    transform: translateX(2rem);
+  }
+
+  70% {
+    transform: translateX(-2rem);
+  }
+
+  80% {
+    transform: translateX(2rem);
+  }
+
+  90% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    transform: translateX(2rem);
+  }
 }

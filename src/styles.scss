@@ -20,3 +20,17 @@
 @import "scss/components/snackbar";
 @import "scss/base/toolbar";
 @import "scss/components/pagination";
+
+.angry {
+  animation-duration: 0.5s;
+  animation-name: angry;
+  animation-iteration-count: infinite;
+  color: #cd0505;
+}
+
+.happy {
+  animation-duration: 15s;
+  animation-name: happy;
+  animation-iteration-count: infinite;
+  color: #35cf20;
+}
