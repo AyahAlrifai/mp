@@ -65,7 +65,7 @@
     <!-- add -->
     <span class="menu">
         <span *ngFor="let item of addIconActions">
-            <span *ngIf="item.children && item.children.length > 0">
+            <span *ngIf="item.children && item.children.length != 0">
                 <span [matMenuTriggerFor]="menu.childMenu" class="quick-action">
                     <span>{{item.text}}</span>
                     <mat-icon>{{ item.icon }}</mat-icon> <mat-icon>expand_more</mat-icon>
