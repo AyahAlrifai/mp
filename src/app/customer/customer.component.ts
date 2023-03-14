@@ -49,25 +49,34 @@ export class CustomerComponent implements OnInit {
   private loadRequiredData(): void {
     this.spinnerService.showSpinner();
     forkJoin(
-      // this.customerService.getCycles(),
-      // this.customerService.getPricebook(),
-      // this.customerService.getCategories(),
+      this.http.get(`../../assets/customer.json`),
+      this.http.get(`../../assets/cycle.json`),
+      this.http.get(`../../assets/price_book.json`),
+      this.http.get(`../../assets/category.json`),
       this.http.get(`../../assets/configurations/default-customer-column-def.json`),
       this.http.get(`../../assets/configurations/customer-column-def.json`),
       this.http.get(`../../assets/configurations/customer-search-fields.json`),
       this.http.get(`../../assets/configurations/customer-quick-options.json`),
       this.http.get(`../../assets/configurations/customer-grid-configuration-action.json`)
-    ).subscribe(([/*cycles, plans, categories,*/defaultColDef,colDef, searchFields, customerQuickActions, addIconActions]) => {
+    ).subscribe(([customer,cycles, plans, categories,defaultColDef,colDef, searchFields, customerQuickActions, addIconActions]) => {
       this.spinnerService.hideSpinner();
-      // plans.returnValue.data.forEach((element: { planName: any; planCode: any; }) => {
-      //   this.pricebookList.push({ key: element.planCode, value: element.planName });
-      // });
-      // cycles.returnValue.data.forEach((element: { cycleName: any; cycleCode: any; }) => {
-      //   this.cycleList.push({ value: element.cycleName, key: element.cycleCode });
-      // });
-      // categories.returnValue.data.forEach((element: { categoryName: any; categoryCode: any; }) => {
-      //   this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
-      // });
+
+      this.data =customer;
+      this.resultSize = customer.size;
+      this.data.forEach((element: any) => {
+        element.pk = element.accountNumber;
+      });
+
+      plans.forEach((element: { planName: any; planCode: any; }) => {
+        this.pricebookList.push({ key: element.planCode, value: element.planName });
+      });
+      cycles.forEach((element: { cycleName: any; cycleCode: any; }) => {
+        this.cycleList.push({ value: element.cycleName, key: element.cycleCode });
+      });
+      categories.forEach((element: { categoryName: any; categoryCode: any; }) => {
+        this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
+      });
+      
       if(!colDef) {
         this.columnDefs = defaultColDef as ColDef[];
       } else {
@@ -79,7 +88,7 @@ export class CustomerComponent implements OnInit {
 
       this.editColDef();
       this.updateSearchFields();
-      this.search();
+      // this.search();
     }, err => {
       this.spinnerService.hideSpinner();
       this._snackBar.open(err.message, "failed", {
@@ -194,6 +203,7 @@ export class CustomerComponent implements OnInit {
     this.customerService.search(body).subscribe(data => {
       if (data.executionSuccessful) {
         this.data = data.returnValue.data;
+        console.log(this.data);
         this.resultSize = data.returnValue.size;
         this.data.forEach((element: any) => {
           element.pk = element.accountNumber;
