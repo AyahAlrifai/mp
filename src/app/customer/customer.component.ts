@@ -58,10 +58,10 @@ export class CustomerComponent implements OnInit {
       this.http.get(`../../assets/configurations/customer-search-fields.json`),
       this.http.get(`../../assets/configurations/customer-quick-options.json`),
       this.http.get(`../../assets/configurations/customer-grid-configuration-action.json`)
-    ).subscribe(([customer,cycles, plans, categories,defaultColDef,colDef, searchFields, customerQuickActions, addIconActions]) => {
+    ).subscribe(([customer, cycles, plans, categories, defaultColDef, colDef, searchFields, customerQuickActions, addIconActions]) => {
       this.spinnerService.hideSpinner();
 
-      this.data =customer;
+      this.data = customer;
       this.resultSize = customer.size;
       this.data.forEach((element: any) => {
         element.pk = element.accountNumber;
@@ -76,8 +76,8 @@ export class CustomerComponent implements OnInit {
       categories.forEach((element: { categoryName: any; categoryCode: any; }) => {
         this.categoryList.push({ key: element.categoryCode, value: element.categoryName });
       });
-      
-      if(!colDef) {
+
+      if (!colDef) {
         this.columnDefs = defaultColDef as ColDef[];
       } else {
         this.columnDefs = colDef as ColDef[];
@@ -152,79 +152,78 @@ export class CustomerComponent implements OnInit {
   }
 
   public search(): void {
-    this.searchDataModel = [];
+    //   this.searchDataModel = [];
+    //   this.searchFields.forEach((field: { formControlName: any; operator: any; }) => {
+    //     if (field.formControlName == "createdDate") {
+    //       let start = this.searchForm.controls["start"].value;
+    //       let end = this.searchForm.controls["end"].value;
+    //       if (start && end) {
+    //         this.searchDataModel.push({
+    //           "searchField": field.formControlName,
+    //           "searchValues": [this.getFormattedDate(start), this.getFormattedDate(end)],
+    //           "operator": field.operator,
+    //           "condition": "and",
+    //           "fromExternal": true
+    //         });
+    //       }
+    //     } else {
+    //       let fieldValue = this.searchForm.controls[field.formControlName].value;
+    //       if (fieldValue) {
+    //         this.searchDataModel.push({
+    //           "searchField": field.formControlName,
+    //           "searchValues": fieldValue,
+    //           "operator": field.operator,
+    //           "condition": "and",
+    //           "fromExternal": true
+    //         });
+    //       }
+    //     }
+    //   });
 
-    this.searchFields.forEach((field: { formControlName: any; operator: any; }) => {
-      if (field.formControlName == "createdDate") {
-        let start = this.searchForm.controls["start"].value;
-        let end = this.searchForm.controls["end"].value;
-        if (start && end) {
-          this.searchDataModel.push({
-            "searchField": field.formControlName,
-            "searchValues": [this.getFormattedDate(start), this.getFormattedDate(end)],
-            "operator": field.operator,
-            "condition": "and",
-            "fromExternal": true
-          });
-        }
-      } else {
-        let fieldValue = this.searchForm.controls[field.formControlName].value;
-        if (fieldValue) {
-          this.searchDataModel.push({
-            "searchField": field.formControlName,
-            "searchValues": fieldValue,
-            "operator": field.operator,
-            "condition": "and",
-            "fromExternal": true
-          });
-        }
-      }
-    });
-
-    this.sendSearchRequest();
+    //   this.sendSearchRequest();
   }
 
   private sendSearchRequest(): void {
-    let body = {
-      "resourceId": 1,
-      "loadData": true,
-      "start": this.currentPage * 100,
-      "length": this.rowsPerPage,
-      "searchDataModel": this.searchDataModel,
-      "sortDataModel": [{
-        "sortField": "accountNumber",
-        "direction": "ordrd"
-      }],
-      "dataHints": null,
-      "sizeHints": null
-    };
+    //   let body = {
+    //     "resourceId": 1,
+    //     "loadData": true,
+    //     "start": this.currentPage * 100,
+    //     "length": this.rowsPerPage,
+    //     "searchDataModel": this.searchDataModel,
+    //     "sortDataModel": [{
+    //       "sortField": "accountNumber",
+    //       "direction": "ordrd"
+    //     }],
+    //     "dataHints": null,
+    //     "sizeHints": null
+    //   };
 
-    this.spinnerService.showSpinner();
-    this.customerService.search(body).subscribe(data => {
-      if (data.executionSuccessful) {
-        this.data = data.returnValue.data;
-        console.log(this.data);
-        this.resultSize = data.returnValue.size;
-        this.data.forEach((element: any) => {
-          element.pk = element.accountNumber;
-        });
-        this.spinnerService.hideSpinner();
-      } else {
-        this.spinnerService.hideSpinner();
-        this._snackBar.open(data.errorCode, "failed", {
-          horizontalPosition: "start",
-          verticalPosition: "bottom",
-          duration: 3000
-        });
-      }
-    }, err => {
-      this.spinnerService.hideSpinner();
-      this._snackBar.open(err.message, "failed", {
-        horizontalPosition: "start",
-        verticalPosition: "bottom",
-        duration: 3000
-      });
-    });
+    //   this.spinnerService.showSpinner();
+    //   this.customerService.search(body).subscribe(data => {
+    //     if (data.executionSuccessful) {
+    //       this.data = data.returnValue.data;
+    //       console.log(this.data);
+    //       this.resultSize = data.returnValue.size;
+    //       this.data.forEach((element: any) => {
+    //         element.pk = element.accountNumber;
+    //       });
+    //       this.spinnerService.hideSpinner();
+    //     } else {
+    //       this.spinnerService.hideSpinner();
+    //       this._snackBar.open(data.errorCode, "failed", {
+    //         horizontalPosition: "start",
+    //         verticalPosition: "bottom",
+    //         duration: 3000
+    //       });
+    //     }
+    //   }, err => {
+    //     this.spinnerService.hideSpinner();
+    //     this._snackBar.open(err.message, "failed", {
+    //       horizontalPosition: "start",
+    //       verticalPosition: "bottom",
+    //       duration: 3000
+    //     });
+    //   });
   }
 
   private getFormattedDate(date: Date): string {
@@ -240,7 +239,6 @@ export class CustomerComponent implements OnInit {
   }
 
   public onPageChange(event: any): void {
-    console.log(this.selectedRowData);
     this.rowsPerPage = event.pageSize;
     this.currentPage = event.pageIndex;
     this.sendSearchRequest();
