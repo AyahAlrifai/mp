@@ -1,0 +1,85 @@
+<div class="grid-config-action">
+    <!-- refresh -->
+    <span class="menu"><mat-icon>refresh</mat-icon></span>
+    <!-- settings -->
+    <span>
+        <span class="menu"
+            [matMenuTriggerFor]="settings"><mat-icon>settings_applications</mat-icon><mat-icon>expand_more</mat-icon></span>
+        <mat-menu #settings="matMenu">
+            <!-- columns -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="columns">Column</button>
+            <!-- density -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="density">Density</button>
+            <!-- sticky columns -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="stickyColumns">Pinned columns</button>
+            <!-- group by -->
+            <button class="menu-item" mat-menu-item [matMenuTriggerFor]="groupBy">GroupBy</button>
+            <!-- save -->
+            <button class="menu-item" mat-menu-item (click)="saveColDef()">Save</button>
+            <!-- reset -->
+            <button class="menu-item" mat-menu-item (click)="resetColDef()">Reset</button>
+        </mat-menu>
+
+        <!-- columns -->
+        <mat-menu #columns="matMenu">
+            <span *ngFor="let col of columnDefs">
+                <button *ngIf="!col.checkboxSelection && !col.pinned" class="menu-item" mat-menu-item
+                    (click)="toggleColumn($event,col.field)">
+                    <mat-icon *ngIf="!col.hide">check</mat-icon>
+                    {{col.headerName}}
+                </button>
+            </span>
+        </mat-menu>
+
+        <!-- density -->
+        <mat-menu #density="matMenu">
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Dense')"><mat-icon *ngIf="currentDensity == 'Dense'">check</mat-icon>Dense</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Compact')"><mat-icon *ngIf="currentDensity == 'Compact'">check</mat-icon>Compact</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Medium')"><mat-icon *ngIf="currentDensity == 'Medium'">check</mat-icon>Medium</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Expanded')"><mat-icon *ngIf="currentDensity == 'Expanded'">check</mat-icon>Expanded</button>
+            <button class="menu-item" mat-menu-item (click)="setDensity($event,'Spacios')"><mat-icon *ngIf="currentDensity == 'Spacios'">check</mat-icon>Spacios</button>
+        </mat-menu>
+
+        <!-- pinned Columns -->
+        <mat-menu #stickyColumns="matMenu">
+            <span *ngFor="let col of columnDefs">
+                <button *ngIf="!col.checkboxSelection && !col.hide" class="menu-item" mat-menu-item
+                    (click)="pinnedColumn($event,col.field)">
+                    <mat-icon *ngIf="col.pinned">check</mat-icon>
+                    {{col.headerName}}
+                </button>
+            </span>
+        </mat-menu>
+
+        <!-- group By -->
+        <mat-menu #groupBy="matMenu">
+            <span *ngFor="let col of columnDefs">
+                <button *ngIf="col.enableRowGroup" class="menu-item" mat-menu-item
+                    (click)="setGroupBY($event,col.field)">
+                    <mat-icon *ngIf="col.enableRowGroup && col.rowGroup">check</mat-icon>
+                    {{col.headerName}}
+                </button>
+            </span>
+        </mat-menu>
+    </span>
+    <!-- add -->
+    <span class="menu">
+        <span *ngFor="let item of addIconActions">
+            <span *ngIf="item.children && item.children.length != 0">
+                <span [matMenuTriggerFor]="menu.childMenu" class="quick-action">
+                    <span>{{item.text}}</span>
+                    <mat-icon>{{ item.icon }}</mat-icon> <mat-icon>expand_more</mat-icon>
+                </span>
+                <app-quick-menu-item #menu [items]="item.children" data=""></app-quick-menu-item>
+            </span>
+        </span>
+    </span>
+    <!-- export -->
+    <span class="menu">
+        <span [matMenuTriggerFor]="export"><mat-icon>call_made</mat-icon><mat-icon>expand_more</mat-icon></span>
+        <mat-menu #export="matMenu">
+            <button class="menu-item" (click)="onDownloadCSV()" mat-menu-item>CSV</button>
+            <button class="menu-item" (click)="onDownloadExcel()" mat-menu-item>EXCEL</button>
+        </mat-menu>
+    </span>
+</div>

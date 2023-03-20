@@ -12,19 +12,19 @@
         "children":[
             {
                 "displayName":"Services",
-                "route":"",
+                "route":"/mp_u_services",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Products",
-                "route":"",
+                "route":"/mp_u_product",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Products",
-                "route":"",
+                "route":"mp_u_catalog_products",
                 "displayIcon":"",
                 "children":[]
             },

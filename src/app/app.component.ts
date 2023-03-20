@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import * as MenuItemData from '../assets/configurations/menu_items.json';
 import * as ToolbarIcon from '../assets/configurations/tool_bar_icons.json';
-import { MenuItem } from './menu/menu-item';
+import { MenuItem } from './sharedComponent/menu/menu-item';
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,11 @@
+<div class="primary-cell">
+    <div class="left-side">
+        <a routerLink="/">{{value.productName}}</a>
+    </div>
+    <div class="right-side">
+        <div
+            [ngClass]="{'green-text': value.status == 'ACTIVE', 'red-text': value.status == 'INACTIVE', 'orange-text':value.accountStatus == 'SUSPENDED','bold':true}">
+            {{value.status}}
+        </div>
+    </div>
+</div>

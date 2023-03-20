@@ -1,0 +1,26 @@
+@import "../../../../styles.scss";
+
+.menu {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.menu-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $primary_color_darkest;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+ .mat-icon {
+    font-size: 1.5rem;
+    margin-right: 0.4rem;
+    color:$primary_color_darkest;
+    margin-right: 0px;
+    width: auto;
+}
+
+::ng-deep .mat-menu-panel {
+    min-width: 15rem;
+}

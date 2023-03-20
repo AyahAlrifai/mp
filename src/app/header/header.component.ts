@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import { SettingsProgressDialog } from '../settingProgress/settingsProgress.dialog';
+import { SettingsProgressDialog } from '../sharedComponent/settingProgress/settingsProgress.dialog';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'header-view',
@@ -9,9 +10,9 @@ import { SettingsProgressDialog } from '../settingProgress/settingsProgress.dial
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() name: string = "";
+  public name: String = "";
 
-  constructor(public dialog: MatDialog) {
+  constructor(public headerService:HeaderService, public dialog: MatDialog) {
   }
 
   ngOnInit() {

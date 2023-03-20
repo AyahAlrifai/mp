@@ -45,7 +45,6 @@
         "minWidth": 350,
         "maxWidth": 500,
         "enableRowGroup": true,
-        "pinned": false,
         "rowGroup": false,
         "hide": false
     },
@@ -61,7 +60,6 @@
         "flex": 1,
         "minWidth": 350,
         "maxWidth": 500,
-        "pinned": false,
         "rowGroup": false,
         "hide": false
     },
@@ -78,7 +76,6 @@
         "minWidth": 200,
         "maxWidth": 300,
         "hide": true,
-        "pinned": false,
         "rowGroup": false
     },
     {
@@ -93,7 +90,6 @@
         "flex": 1,
         "minWidth": 250,
         "maxWidth": 500,
-        "pinned": false,
         "hide": true,
         "rowGroup": false
     },
@@ -109,7 +105,6 @@
         "minWidth": 175,
         "maxWidth": 300,
         "enableRowGroup": true,
-        "pinned": false,
         "rowGroup": true,
         "hide": false
     },
@@ -125,7 +120,6 @@
         "flex": 1,
         "minWidth": 150,
         "maxWidth": 300,
-        "pinned": false,
         "rowGroup": false,
         "hide": false
     },
@@ -141,7 +135,6 @@
         "flex": 1,
         "minWidth": 150,
         "maxWidth": 500,
-        "pinned": false,
         "rowGroup": false,
         "hide": false
     },
@@ -158,7 +151,6 @@
         "minWidth": 150,
         "maxWidth": 200,
         "hide": true,
-        "pinned": false,
         "rowGroup": false
     },
     {
@@ -173,7 +165,6 @@
         "flex": 1,
         "minWidth": 175,
         "maxWidth": 300,
-        "pinned": null,
         "rowGroup": false,
         "hide": false
     },
@@ -189,7 +180,6 @@
         "flex": 1,
         "minWidth": 175,
         "maxWidth": 300,
-        "pinned": null,
         "rowGroup": false,
         "hide": false
     },
@@ -206,7 +196,6 @@
         "minWidth": 150,
         "maxWidth": 300,
         "hide": true,
-        "pinned": false,
         "rowGroup": false
     },
     {
@@ -222,7 +211,6 @@
         "minWidth": 150,
         "maxWidth": 300,
         "hide": true,
-        "pinned": null,
         "rowGroup": false
     }
 ]

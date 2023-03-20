@@ -1,0 +1,5 @@
+<grid #grid [selectedData]="selectedRowData" [data]="data" [addIconActions]="addIconActions" [columnDefs]="columnDefs"
+    [rowsPerPage]="rowsPerPage" [resultSize]="resultSize" [noRowsTemplate]="noRowsTemplate"
+    (selectedRowData)="setSelectedRowData($event)" (pageChange)="onPageChange($event)" [currentDensity]="currentDensity"
+    (onSaveColDef)="saveColDef($event)" (onResetColDef)="resetColDef($event)">
+</grid>

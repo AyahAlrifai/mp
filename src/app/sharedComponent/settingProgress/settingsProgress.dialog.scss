@@ -1,0 +1,17 @@
+@import "../../../styles.scss";
+
+.task-panle {
+  width: 90%;
+  margin: 5%;
+
+  .task {
+    td {
+      padding: 0.4rem;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}

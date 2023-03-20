@@ -1,0 +1,13 @@
+<div class="primary-cell">
+    <div class="left-side">
+        <a routerLink="/">{{value.serviceName}}</a>
+        <span class="action-panel">
+            <mat-icon aria-label="edit" matTooltip="edit" class="action"
+                (click)="edit()">edit</mat-icon>
+            <mat-icon aria-label="manage" matTooltip="manage" class="action"
+                (click)="managePriceBook()">line_weight</mat-icon>
+            <mat-icon aria-label="assign agents" matTooltip="assign agents" class="action"
+                (click)="assignAgents()">add_box</mat-icon>
+        </span>
+    </div>
+</div>

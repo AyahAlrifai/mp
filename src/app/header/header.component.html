@@ -1,5 +1,5 @@
 <div class="header">
-    <div class="view_name"> {{ name }} </div>
+    <div class="view_name" [innerHtml]="this.headerService.header"></div>
     <div class="settings">
         <span><mat-icon>check_circle</mat-icon></span>
         <span> Your settings has been completed <a class="general-link-inline" (click)="openDialog()">click
