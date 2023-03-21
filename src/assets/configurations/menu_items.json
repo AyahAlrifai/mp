@@ -1,7 +1,7 @@
 [
     {
         "displayName":"Home",
-        "route":"",
+        "route":"mp_dashboard",
         "displayIcon":"",
         "children":[]
     },
@@ -12,13 +12,13 @@
         "children":[
             {
                 "displayName":"Services",
-                "route":"/mp_u_services",
+                "route":"mp_u_services",
                 "displayIcon":"",
                 "children":[]
             },
             {
                 "displayName":"Products",
-                "route":"/mp_u_product",
+                "route":"mp_u_product",
                 "displayIcon":"",
                 "children":[]
             },
@@ -172,7 +172,7 @@
     },
     {
         "displayName":"Accounts",
-        "route":"/mp_u_v_customers",
+        "route":"mp_u_v_customers",
         "displayIcon":"",
         "children":[]
     },

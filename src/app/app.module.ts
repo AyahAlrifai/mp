@@ -47,6 +47,7 @@ import { AgentProductsService } from './mainComponent/agentProducts/agentProduct
 import { PricingComponent } from './mainComponent/pricing/pricing.component';
 import { priceBookNameCell } from './mainComponent/pricing/PriceBookNameCell/priceBookNameCell.component';
 import { PricingService } from './mainComponent/pricing/pricing.service';
+import { DashBoardComponent } from './mainComponent/dashBoard/dashboard.component';
 
 ModuleRegistry.registerModules([ExcelExportModule, CsvExportModule, RowGroupingModule, ClientSideRowModelModule]);
 
@@ -57,6 +58,7 @@ ModuleRegistry.registerModules([ExcelExportModule, CsvExportModule, RowGroupingM
     MenuItemComponent,
     QuickMenuItemComponent,
     HeaderComponent,
+    DashBoardComponent,
     CustomerComponent,
     ServicesComponent,
     ProductsComponent,

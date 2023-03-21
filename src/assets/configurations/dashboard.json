@@ -1,0 +1,111 @@
+[
+    {
+        "name": "Catalog",
+        "quickAdd": [
+            {
+                "name": "Add Product",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Add Price Book",
+                "route": "",
+                "dialog": "BasicDialog"
+            },
+            {
+                "name": "Add Bundle",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Add Group",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Add Discount",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Add Rating",
+                "route": "",
+                "dialog": "BasicDialog"
+            },
+            {
+                "name": "Add Promotion",
+                "route": "/",
+                "dialog": ""
+            }
+        ],
+        "icon": "book.png",
+        "description": "Customize your service catalog to create new product offerings that leverage multiple services from multiple upstream service providers.",
+        "items": [
+            {
+                "name": "Products",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Products",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Inherited Products",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Pricing",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Bundles",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Groups",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Discounts",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Commission Setup",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Rating",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Promotions",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Seasons",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Product Pricing",
+                "route": "/",
+                "dialog": ""
+            },
+            {
+                "name": "Classification",
+                "route": "/",
+                "dialog": ""
+            }
+        ]
+    }
+]

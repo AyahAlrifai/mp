@@ -1,0 +1,14 @@
+
+
+<mat-card class="card" *ngFor="let card of dashboardConfig">
+    <mat-card-header>
+        <mat-card-title>{{card.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{card.description}}</p>
+        <img mat-card-sm-image style="float: right;" src="assets/img/{{card.icon}}" alt="">
+    </mat-card-content>
+    <mat-card-actions>
+        <button *ngFor="let item of card.items" mat-button>{{item.name}}</button>
+    </mat-card-actions>
+</mat-card>

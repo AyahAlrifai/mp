@@ -6,6 +6,7 @@ import { HomeComponent } from './mainComponent/home/home.component';
 import { ProductsComponent } from './mainComponent/products/products.component';
 import { PricingComponent } from './mainComponent/pricing/pricing.component';
 import { ServicesComponent } from './mainComponent/services/services.component';
+import { DashBoardComponent } from './mainComponent/dashBoard/dashboard.component';
 
 const routes: Routes = [
   { path: "mp_u_v_customers", component: CustomerComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "mp_u_product", component: ProductsComponent },
   { path: "mp_u_catalog_products", component: AgentProductsComponent },
   { path: "mp_u_pricing", component: PricingComponent },
+  { path: "mp_dashboard", component: DashBoardComponent },
   { path: "", component: HomeComponent },
   { path: '**', component: HomeComponent },
 
