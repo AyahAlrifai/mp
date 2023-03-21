@@ -37,12 +37,12 @@ export class PricingComponent implements OnInit, OnDestroy {
 
   private loadRequiredData(): void {
     this.spinnerService.showSpinner();
-    this.headerService.updateHeader("<p>Services</p>");
+    this.headerService.updateHeader("<p>Pricing</p>");
 
     forkJoin(
-      this.http.get(`../../assets/configurations/default-services-column-def.json`),
-      this.http.get(`../../assets/configurations/services-column-def.json`),
-      this.http.get(`../../assets/configurations/services-grid-configuration-action.json`)
+      this.http.get(`../../assets/configurations/default-pricing-column-def.json`),
+      this.http.get(`../../assets/configurations/pricing-column-def.json`),
+      this.http.get(`../../assets/configurations/pricing-grid-configuration-action.json`)
     ).subscribe(([defaultColDef, colDef, addIconActions]) => {
       this.spinnerService.hideSpinner();
 

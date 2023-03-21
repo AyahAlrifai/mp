@@ -44,9 +44,9 @@ import { HeaderService } from './header/header.service';
 import { ManageHttpInterceptor } from './managehttp.interceptor';
 import { AgentProductsComponent } from './mainComponent/agentProducts/agentProducts.component';
 import { AgentProductsService } from './mainComponent/agentProducts/agentProducts.service';
-import { PricingComponent } from './mainComponent/services copy/pricing.component';
-import { priceBookNameCell } from './mainComponent/services copy/PriceBookNameCell/priceBookNameCell.component';
-import { PricingService } from './mainComponent/services copy/pricing.service';
+import { PricingComponent } from './mainComponent/pricing/pricing.component';
+import { priceBookNameCell } from './mainComponent/pricing/PriceBookNameCell/priceBookNameCell.component';
+import { PricingService } from './mainComponent/pricing/pricing.service';
 
 ModuleRegistry.registerModules([ExcelExportModule, CsvExportModule, RowGroupingModule, ClientSideRowModelModule]);
 

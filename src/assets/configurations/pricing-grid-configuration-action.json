@@ -1,0 +1,17 @@
+[
+    {
+        "text": "",
+        "textRoute": "",
+        "icon": "add_box",
+        "iconDialog": "",
+        "children": [
+            {
+                "text": "add price book",
+                "textRoute": "/",
+                "icon": "",
+                "iconDialog": "",
+                "children": []
+            }
+        ]
+    }
+]

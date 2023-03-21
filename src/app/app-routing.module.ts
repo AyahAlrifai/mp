@@ -4,7 +4,7 @@ import { AgentProductsComponent } from './mainComponent/agentProducts/agentProdu
 import { CustomerComponent } from './mainComponent/customer/customer.component';
 import { HomeComponent } from './mainComponent/home/home.component';
 import { ProductsComponent } from './mainComponent/products/products.component';
-import { PricingComponent } from './mainComponent/services copy/pricing.component';
+import { PricingComponent } from './mainComponent/pricing/pricing.component';
 import { ServicesComponent } from './mainComponent/services/services.component';
 
 const routes: Routes = [
