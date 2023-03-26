@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.logo = this.appService.getLogo();
     this.navItems = (MenuItemData as any).default;
     this.toolbarItems = (ToolbarIcon as any).default;
   }
